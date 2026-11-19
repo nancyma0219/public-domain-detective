@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Public Domain Detective</title>
+<style>
+  :root {
+    --paper: #f6f1e4; --card: #fffdf6; --ink: #22201c; --muted: #7a7266; --rule: #d9cfb8;
+    --red: #b3261e; --green: #2f6b3a; --amber: #a36a00; --blue: #2b4c7e;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --mono: "Courier Prime", "American Typewriter", ui-monospace, "Courier New", monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--serif); line-height: 1.5; padding: 2.5rem 1.25rem 4rem; }
+  body.context-hidden { margin-right: 0 !important; }
+  body.context-hidden #context-panel { display: none !important; }
+  body:not(.context-hidden) main { margin-left: auto; margin-right: auto; }
+  #context-close { position: fixed; z-index: 9999; top: 12px; right: 16px; display: none; padding: .35rem .7rem; background: #fff; color: #222; border: 1px solid #777; }
+  body:not(.context-hidden) #context-close { display: block; }
+  .hint { color: var(--muted); font-size: .86rem; margin-top: .45rem; }
+  .quickstart { margin: .15rem 0 .4rem; color: var(--muted); font-size: .88rem; }
+  .notice { border-left: 3px solid var(--amber); background: #fff6e5; padding: .5rem .7rem; margin-top: .6rem; font-size: .87rem; }
+  main { max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+  .card { background: var(--card); border: 1px solid var(--rule); box-shadow: 0 1px 0 var(--rule), 0 6px 18px rgba(60,45,20,.06); padding: 1.4rem 1.6rem; position: relative; }
+  /* a catalog card: punched hole + red rule */
+  .catalog::before { content: ""; position: absolute; left: 50%; bottom: .6rem; width: .7rem; height: .7rem; border-radius: 50%; background: var(--paper); border: 1px solid var(--rule); transform: translateX(-50%); }
+  .catalog { padding-bottom: 2rem; border-top: 3px solid var(--red); }
+  h1 { font-size: 2rem; font-weight: 600; letter-spacing: -.01em; }
+  h1 small { display: block; font-family: var(--mono); font-size: .8rem; font-weight: 400; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .35rem; }
+  .lede { margin-top: .6rem; font-size: 1.05rem; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.1rem; font-size: .9rem; }
+  .facts b { display: block; font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--red); margin-bottom: .2rem; }
+  @media (max-width: 700px) { .facts { grid-template-columns: 1fr; } }
+  label.k { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  textarea { display: block; overflow-wrap: anywhere; field-sizing: content; width: 100%; margin-top: .4rem; font: 1.05rem var(--serif); border: none; border-bottom: 1px solid var(--rule); background: transparent; resize: vertical; min-height: 7.5rem; max-height: 24rem; overflow-y: auto; outline: none; padding: .3rem 0; }
+  textarea:focus { border-bottom-color: var(--ink); }
+  .row { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-top: .9rem; }
+  button { font: .8rem var(--mono); letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--ink); background: var(--ink); color: var(--card); padding: .65rem 1.2rem; cursor: pointer; }
+  button.ghost { background: transparent; color: var(--ink); }
+  button:disabled { opacity: .35; cursor: default; }
+  .modes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.6rem; margin:1rem 0 .65rem; }
+  .mode { text-align:left; background:#fffaf0; color:var(--ink); text-transform:none; letter-spacing:normal; border:1px solid var(--rule); padding:.75rem; font-family:var(--serif); }
+  .mode strong { display:block; font-size:1rem; }
+  .mode small { display:block; color:var(--muted); font-size:.78rem; margin-top:.25rem; }
+  .mode[aria-pressed="true"] { border:2px solid var(--red); padding:calc(.75rem - 1px); background:#fff1dc; }
+  @media(max-width:620px) { .modes { grid-template-columns:1fr; } .card { padding:1rem; } }
+  #body table { display:block; max-width:100%; overflow-x:auto; }
+  .research-visual { padding:.7rem .8rem; background:#fffaf0; border:1px solid var(--rule); margin:1rem 0; }
+  .research-visual svg { display:block; width:100%; height:auto; }
+  .research-visual figcaption { font:.73rem var(--mono); color:var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .8rem; }
+  .chip { font: .82rem var(--serif); border: 1px dashed var(--muted); background: transparent; color: var(--ink); text-transform: none; letter-spacing: 0; padding: .35rem .7rem; }
+  .chip:hover { border-style: solid; background: #fff7df; }
+  .chip i { font-style: normal; font-family: var(--mono); font-size: .68rem; color: var(--red); margin-right: .35rem; }
+  /* investigation board */
+  #board { display: none; order: 3; }
+  #report { order: 2; }
+  main > footer { order: 4; }
+  #board.completed .rounds, #board.completed #log { display: none; }
+  #board.completed.expanded .rounds { display: flex; }
+  #board.completed.expanded #log { display: block; }
+  #toggle-research { display: none; margin-top: .7rem; }
+  #board.completed #toggle-research { display: inline-block; }
+  #report { scroll-margin-top: 1rem; }
+  #board.on { scroll-margin-top: 1rem; }
+  @media (prefers-reduced-motion: no-preference) { #report { scroll-behavior: smooth; } }
+  #board.on { display: block; }
+  .rounds { display: flex; flex-direction: column; gap: 1rem; margin-top: .7rem; }
+  .round h3 { font: .72rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: .45rem; }
+  .desks { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .6rem; }
+  .desk { border: 1px solid var(--rule); background: #fffaf0; padding: .55rem .7rem; font-size: .82rem; }
+  .desk .who { font: .72rem var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--blue); }
+  .desk .task { color: var(--muted); margin: .2rem 0 .35rem; font-style: italic; }
+  .desk ol { list-style: none; font-family: var(--mono); font-size: .74rem; }
+  .desk li::before { content: "› "; color: var(--red); }
+  #log { list-style: none; font: .78rem var(--mono); color: var(--muted); margin-top: .8rem; max-height: 9rem; overflow-y: auto; }
+  #status { float: right; font: .72rem var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--amber); }
+  /* report */
+  #report { display: none; }
+  #report.on { display: block; }
+  .stamp { display: inline-block; font: 700 1.05rem var(--mono); letter-spacing: .12em; text-transform: uppercase; border: 3px double currentColor; padding: .3rem .8rem; transform: rotate(-2.5deg); margin-bottom: .8rem; }
+  .stamp.pd { color: var(--green); } .stamp.ic { color: var(--red); } .stamp.unk { color: var(--amber); } .stamp.ask { color: var(--blue); }
+  .stamp.compare { color: var(--amber); } .stamp.trend { color: var(--blue); }
+  .result-overview { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; margin:0 0 1rem; }
+  .result-fact { background:#fffaf0; border:1px solid var(--rule); padding:.65rem .8rem; min-width:0; }
+  .result-fact .fact-label { display:block; font:.71rem var(--mono); text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:.3rem; }
+  .result-fact .fact-value { font-size:.93rem; overflow-wrap:anywhere; }
+  .result-note { color:var(--muted); font-size:.85rem; margin:.2rem 0 1rem; }
+  .annual-details { border:1px solid var(--rule); padding:.75rem; background:#fffaf0; margin-top:1rem; }
+  .annual-details > summary { color:var(--ink); font-weight:bold; font-size:.85rem; }
+  .annual-details[open] > summary { margin-bottom:.6rem; }
+  @media(max-width:620px) { .result-overview { grid-template-columns:1fr; } }
+  @media print { .annual-details:not([open]) { display:block; } .annual-details:not([open]) > * { display:block; } }
+  #body h3 { font-size: 1.05rem; margin: 1.1rem 0 .4rem; border-bottom: 1px solid var(--rule); padding-bottom: .2rem; }
+  #body p { margin: .4rem 0; }
+  #body ul { margin: .3rem 0 .3rem 1.2rem; }
+  #body li { margin: .25rem 0; }
+  #body code, .eid { font: .76rem var(--mono); }
+  #body table { border-collapse: collapse; margin: .5rem 0; font-size: .88rem; }
+  #body td, #body th { border: 1px solid var(--rule); padding: .25rem .55rem; text-align: left; }
+  .eid { background: #f1e8cf; border: 1px solid var(--rule); padding: 0 .3rem; cursor: pointer; white-space: nowrap; color: var(--blue); }
+  .eid:hover { background: #fff; border-color: var(--blue); }
+  #evidence-pop { display: none; margin-top: .9rem; background: #fffaf0; border-left: 3px solid var(--blue); padding: .6rem .8rem; font: .78rem/1.45 var(--mono); white-space: pre-wrap; word-break: break-word; }
+  details { margin-top: 1rem; font-size: .85rem; }
+  summary { cursor: pointer; font: .72rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  pre { font: .72rem/1.4 var(--mono); white-space: pre-wrap; word-break: break-word; max-height: 24rem; overflow: auto; background: #fbf6e8; padding: .7rem; margin-top: .5rem; }
+  footer { font-size: .8rem; color: var(--muted); text-align: center; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <section class="card catalog">
+    <h1><small>Case file · U.S. copyright, books 1931–1963</small>Public Domain Detective</h1>
+    <p class="lede">Explore historical U.S. book copyrights through original registrations, renewal records, edition comparisons, and data-driven trends. Evidence-based research, not legal clearance.</p>
+    <div class="facts">
+      <div><b>Who it's for</b>Translators, small presses, audiobook narrators, teachers and anyone who wants to reprint, adapt or share an old book.</div>
+      <div><b>How to use it</b>Investigate one book, compare editions and records, or explore patterns across historical registrations. You can write your own question.</div>
+      <div><b>How it works</b>Researchers check copyright records, book editions and author identities. The report shows evidence and uncertainties; detailed research steps are available below.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <form id="ask">
+      <label class="k">Start your research</label>
+      <p class="quickstart">Choose an example or ask your own question. You can investigate a title, reconcile records, or explore historical patterns.</p>
+      <div class="modes" role="group" aria-label="Research question type">
+        <button class="mode" type="button" data-mode="book" aria-pressed="true"><strong>Investigate a book</strong><small>Registration, renewal & copyright status</small></button>
+        <button class="mode" type="button" data-mode="records" aria-pressed="false"><strong>Compare records</strong><small>Conflicts, editions & pseudonyms</small></button>
+        <button class="mode" type="button" data-mode="trends" aria-pressed="false"><strong>Explore trends</strong><small>Yearly patterns & data quality</small></button>
+      </div>
+      <label class="k" for="q">Your research question</label>
+      <textarea id="q" rows="4" aria-label="Your research question" placeholder="Ask about a title, registration record, or historical copyright trend..."></textarea>
+      <div class="row">
+        <button id="go" type="submit">Start research →</button>
+        <button id="ctx" class="ghost" type="button" title="View researchers' context and tool calls after the investigation starts" disabled>View research trace</button>
+        <button id="reset" class="ghost" type="button">New case</button>
+      </div>
+    </form>
+    <p class="hint">Example investigations (click to fill the question; review or edit before submitting):</p>
+    <div class="chips" id="chips">
+      <button class="chip" data-q="Is Strangers on a Train by Patricia Highsmith in the public domain in the U.S.?"><i>renewed</i>Strangers on a Train (1950)</button>
+      <button class="chip" data-q="Is The Price of Salt by Patricia Highsmith (published as Claire Morgan, 1952) in the public domain in the U.S.? Can I find a free copy?"><i>gap</i>The Price of Salt (1952)</button>
+      <button class="chip" data-q="Isaac Asimov's The World of Carbon: the renewal and registration records seem to disagree. Which edition was renewed, and is the 1958 edition still protected?"><i>conflict</i>Asimov's The World of Carbon</button>
+      <button class="chip" data-q="For U.S. Class A books registered from 1931 to 1963, how did the candidate renewal-linkage share change by year? Investigate the break near 1953, and discuss data coverage and matching limitations."><i>pattern</i>Renewal rates 1931–1963</button>
+      <button class="chip" data-q="Is my grandmother's old novel free to use?"><i>vague</i>My grandmother's old novel</button>
+    </div>
+  </section>
+
+  <section class="card" id="board">
+    <span id="status"></span>
+    <label class="k" id="investigation-title">Live investigation</label>
+    <button id="toggle-research" type="button" class="ghost" aria-expanded="false" aria-controls="rounds">Show research steps</button>
+    <div class="rounds" id="rounds"></div>
+    <ol id="log"></ol>
+  </section>
+
+  <section class="card catalog" id="report">
+    <div id="stamp"></div>
+    <div id="result-overview" aria-live="polite"></div>
+    <div id="body"></div>
+    <div id="trend-visual" aria-live="polite"></div>
+    <div id="evidence-pop"></div>
+    <details><summary>Technical evidence log (tool calls)</summary><pre id="calls"></pre></details>
+  </section>
+
+  <footer>Not legal advice. Records: NYPL's transcriptions of the Catalog of Copyright Entries · <a href="/docs">API</a></footer>
+</main>
+<button id="context-close" type="button" aria-label="Close research trace">Close trace ×</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script>
+document.body.classList.add("context-hidden");
+const $ = (id) => document.getElementById(id);
+let source = null, sessionId = null, runId = null, evidence = {}, panelOn = false, activeQuestion = "";
+const desks = {};  // agent name -> its <ol>
+
+const starter = {
+  book: "Is Strangers on a Train by Patricia Highsmith (1950) in the public domain in the United States?",
+  records: "Why does Isaac Asimov's The World of Carbon have different original registration numbers associated with renewal RE277631? What is verified and unresolved?",
+  trends: "For U.S. Class A books registered from 1931 to 1963, how did the candidate renewal-linkage share change by year? Investigate the break near 1953."
+};
+function chooseMode(mode, fill=false) {
+  document.querySelectorAll('.mode').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode===mode)));
+  if (fill) $("q").value=starter[mode];
+}
+document.querySelectorAll('.mode').forEach(b=>b.addEventListener('click',()=>chooseMode(b.dataset.mode,true)));
+document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => { $("q").value = b.dataset.q; $("q").focus(); }));
+$("reset").onclick = () => { if (source) source.close(); sessionId = null; runId = null; $("q").value = ""; $("q").placeholder = "Ask about a title, registration record, or historical copyright trend..."; $("go").disabled = false; $("ctx").disabled = true; document.body.classList.add("context-hidden"); $("board").className = "card"; $("report").className = "card catalog"; };
+$("ctx").onclick = () => {
+  if (!runId) return;
+  if (document.body.classList.contains("context-hidden")) {
+    document.body.classList.remove("context-hidden");
+    $("ctx").textContent = "Hide research trace";
+    if (!panelOn) {
+      panelOn = true;
+      const s = document.createElement("script");
+      s.src = "/context-panel.js";
+      s.onload = () => { if (runId) showContext(runId); };
+      s.onerror = () => { log("Could not load the research trace panel.", "err"); document.body.classList.add("context-hidden"); };
+      document.body.appendChild(s);
+    } else if (runId) showContext(runId);
+  } else {
+    document.body.classList.add("context-hidden");
+    $("ctx").textContent = "View research trace";
+  }
+};
+$("context-close").onclick = () => {
+  document.body.classList.add("context-hidden");
+  $("ctx").textContent = "View research trace";
+};
+
+function log(text, cls = "") { const li = document.createElement("li"); li.textContent = text; li.className = cls; $("log").appendChild(li); $("log").scrollTop = 1e9; }
+
+function desk(agent, task) {
+  if (desks[agent]) return desks[agent];
+  let round = $("rounds").lastElementChild;
+  if (!round) { round = newRound("Lead"); }
+  const d = document.createElement("div"); d.className = "desk";
+  d.innerHTML = `<div class="who"></div><div class="task"></div><ol></ol>`;
+  d.querySelector(".who").textContent = agent;
+  d.querySelector(".task").textContent = task || "";
+  round.querySelector(".desks").appendChild(d);
+  return (desks[agent] = d.querySelector("ol"));
+}
+function newRound(title) {
+  const r = document.createElement("div"); r.className = "round";
+  r.innerHTML = `<h3></h3><div class="desks"></div>`; r.querySelector("h3").textContent = title;
+  $("rounds").appendChild(r); return r;
+}
+
+let pendingTasks = [];
+function onEvent(e) {
+  if (e.type === "start") { runId = e.run_id; sessionId = e.session_id; $("ctx").disabled = false; if (panelOn) { resetContext(); } }
+  else if (e.type === "context") { if (panelOn) showContext(runId); }
+  else if (e.type === "round") { newRound(`Round ${e.round} — ${e.tasks.length} researchers in parallel`); pendingTasks = e.tasks.slice(); }
+  else if (e.type === "activity") {
+    const isResearcher = e.agent.startsWith("Researcher");
+    if (isResearcher && !desks[e.agent]) desk(e.agent, pendingTasks.shift());
+    if (isResearcher) { const li = document.createElement("li"); li.textContent = e.text; desks[e.agent].appendChild(li); }
+    else log(`${e.agent}: ${e.text}`);
+  }
+  else if (e.type === "done") {
+    finish("closed"); render(e);
+    $("board").classList.add("completed");
+    $("board").classList.remove("expanded");
+    $("toggle-research").setAttribute("aria-expanded", "false");
+    $("toggle-research").textContent = "Show research steps";
+    $("investigation-title").textContent = "How we investigated · " + $("rounds").children.length + " round(s)";
+    $("report").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  else if (e.type === "error") { finish("failed"); log(e.message, "err"); }
+}
+
+$("toggle-research").onclick = () => {
+  const expanded = $("board").classList.toggle("expanded");
+  $("toggle-research").setAttribute("aria-expanded", String(expanded));
+  $("toggle-research").textContent = expanded ? "Hide research steps" : "Show research steps";
+};
+
+function finish(label) { $("status").textContent = label; $("go").disabled = false; if (source) source.close(); }
+
+function intentFor(question, text, clarify) {
+  if (clarify) return 'clarification';
+  const q=(question || '').toLowerCase();
+  const aggregate=/\b(1931.{0,4}1963|by year|per year|yearly|trend|cohort|rate|rates|patterns|statistics|distribution)\b/.test(q) &&
+    /renewal|copyright|registration|linkage|records/.test(q);
+  if (aggregate || /^### Research findings/m.test(text)) return 'trends';
+  const compare=/\b(compare|conflict|discrepan|inconsisten|reconcil|different original registration|why does.{0,90}registration|same edition|which edition)\b/.test(q);
+  if (compare) return 'records';
+  return 'book';
+}
+function stampFor(text, clarify, intent='book') {
+  if (intent === 'trends') return ['trend','Research findings'];
+  if (intent === 'records') {
+    const unresolved = /(?:discrepancy|conflict|difference|inconsisten)[^\n]{0,150}(?:unresolved|cannot|not (?:be )?(?:resolved|verified|determined)|unknown)/i.test(text) ||
+      /(?:unresolved|cannot (?:be )?(?:resolve|verify|determine))[^\n]{0,150}(?:discrepancy|conflict|difference|date)/i.test(text);
+    return unresolved ? ['compare','Discrepancy open'] : ['compare','Record comparison'];
+  }
+
+  if (clarify) return ["ask", "Need one detail"];
+  const v = (text.match(/\*\*Verdict:\*\*([^\n]*)/) || [, ""])[1].toLowerCase();
+  if (/can.t be determined|undetermined|cannot|out of scope/.test(v)) return ["unk", "Undetermined"];
+  if (/probably|likely/.test(v)) return ["unk", v.includes("public") ? "Probably public domain" : "Probably protected"];
+  if (/public domain/.test(v)) return ["pd", "Public domain"];
+  if (/in copyright|protected/.test(v)) return ["ic", "In copyright"];
+  return ["unk", "Findings"];
+}
+
+
+function drawVerifiedTrend(r) {
+  const target=$('trend-visual'); target.replaceChildren();
+  const item=(r.evidence||[]).find(e => e.tool==='query_records' &&
+    e.record && Array.isArray(e.record.rows) && e.record.rows.length===33 &&
+    (e.record.columns||[]).includes('link_pct') && (e.record.columns||[]).includes('year'));
+  if(!item) return;
+  const cols=item.record.columns, yi=cols.indexOf('year'), pi=cols.indexOf('link_pct');
+  const pts=item.record.rows.map(row=>[Number(row[yi]),Number(row[pi])]);
+  if(pts.some(p=>p.some(v=>!Number.isFinite(v)))) return;
+  const figure=document.createElement('figure'); figure.className='research-visual';
+  const headline=document.createElement('strong'); headline.textContent='Annual Class A candidate-linkage pattern'; figure.appendChild(headline);
+  const ns='http://www.w3.org/2000/svg', svg=document.createElementNS(ns,'svg');
+  svg.setAttribute('viewBox','0 0 760 230'); svg.setAttribute('role','img');
+  svg.setAttribute('aria-label','Candidate linkage percentage by registration year from 1931 to 1963');
+  const line=document.createElementNS(ns,'polyline');
+  const ymin=0,ymax=Math.max(45,...pts.map(p=>p[1]));
+  line.setAttribute('points',pts.map(([y,v])=>`${55+(y-1931)*20.5},${185-(v-ymin)/(ymax-ymin)*150}`).join(' '));
+  line.setAttribute('fill','none');line.setAttribute('stroke','#a33827');line.setAttribute('stroke-width','2.5');
+  svg.appendChild(line);
+  for (const yr of [1931,1940,1950,1953,1963]) {
+    const t=document.createElementNS(ns,'text');t.setAttribute('x',String(55+(yr-1931)*20.5));t.setAttribute('y','210');
+    t.setAttribute('font-size','14');t.setAttribute('text-anchor','middle');t.textContent=String(yr);svg.appendChild(t);
+  }
+  const axis=document.createElementNS(ns,'text'); axis.setAttribute('x','55');axis.setAttribute('y','20');axis.setAttribute('font-size','13');
+  axis.textContent='Linked rows / registration rows (%)';svg.appendChild(axis);
+  figure.appendChild(svg);
+  const caption=document.createElement('figcaption');caption.textContent=`Derived only from verified DuckDB rows [${item.id}]. Candidate associations, not legal renewal rates.`;
+  figure.appendChild(caption);
+  // Put the chart before the 33-year table, adjacent to the main finding.
+  const headings=[...$('body').querySelectorAll('h3')];
+  const annual=headings.find(h=>/^Annual results/i.test(h.textContent.trim()));
+  if (annual) annual.parentNode.insertBefore(figure,annual);
+  else target.appendChild(figure);
+}
+function collapseAnnualTable() {
+  const headings=[...$('body').querySelectorAll('h3')];
+  const heading=headings.find(h=>/^Annual results/i.test(h.textContent.trim()));
+  if (!heading) return;
+  const table=heading.nextElementSibling;
+  if (!table || table.tagName!=='TABLE') return;
+  const details=document.createElement('details'); details.className='annual-details';
+  const summary=document.createElement('summary'); summary.textContent='View all annual data · 1931–1963 (33 years)';
+  details.appendChild(summary);
+  heading.parentNode.insertBefore(details, heading);
+  details.appendChild(table);
+  // Move any immediate evidence citation paragraph with the table.
+  const following=heading.nextElementSibling;
+  if (following && following.tagName==='P' && /Annual data:/.test(following.textContent)) details.appendChild(following);
+  heading.remove();
+}
+function showResultOverview(intent, response) {
+  const el=$('result-overview'); el.replaceChildren();
+  if(intent!=='records') return;
+  const verdict=(response.match(/\*\*Verdict:\*\*\s*([^\n]+)/i)||[])[1];
+  const unresolved= /(?:date|registration|edition|ad interim)[^\n]{0,130}(?:unresolved|cannot|unknown|not (?:be )?(?:verified|determined|clarified))/i.test(response) ||
+    /(?:unresolved|cannot (?:be )?(?:verify|resolve|determine))[^\n]{0,130}(?:date|registration|edition|discrepancy)/i.test(response);
+  const wrap=document.createElement('div'); wrap.className='result-overview';
+  const add=(name,value)=>{const item=document.createElement('div');item.className='result-fact';
+    const label=document.createElement('span');label.className='fact-label';label.textContent=name;
+    const body=document.createElement('div');body.className='fact-value';body.textContent=value;
+    item.append(label,body);wrap.appendChild(item);};
+  add('Record reconciliation', unresolved ? 'Some discrepancies remain unresolved' : 'See evidence and remaining uncertainties');
+  add('U.S. copyright status (separate finding)',verdict ? verdict.replace(/\[[^\]]+\]/g,'').trim() : 'Not separately established');
+  el.appendChild(wrap);
+  const note=document.createElement('p');note.className='result-note';note.textContent='The record-comparison assessment does not by itself establish legal clearance.';el.appendChild(note);
+}
+
+function render(r) {
+  evidence = Object.fromEntries((r.evidence || []).map((e) => [e.id, e]));
+  const intent = intentFor(activeQuestion, r.response, r.needs_clarification);
+  const [cls, label] = stampFor(r.response, r.needs_clarification, intent);
+  $("stamp").innerHTML = `<span class="stamp ${cls}">${label}</span>`;
+  // marked + DOMPurify come from a CDN; if it is unreachable, show the markdown as escaped text
+  const esc = (t) => t.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]);
+  let html = window.marked && window.DOMPurify
+    ? DOMPurify.sanitize(marked.parse(r.response))
+    : `<div style="white-space:pre-wrap">${esc(r.response)}</div>`;
+  // evidence ids -> clickable chips that show the record a tool returned
+  html = html.replace(/\[((?:REG|REN|SQL|RULE|OL|HT|WD|PG):[^\]<]+)\]/g, (m, group) =>
+    group.split(/,\s*/).map((id) => `<span class="eid" data-id="${id.trim()}">${id.trim()}</span>`).join(" "));
+  $("body").innerHTML = html;
+  showResultOverview(intent, r.response);
+  if (intent === "trends") { drawVerifiedTrend(r); collapseAnnualTable(); } else $("trend-visual").replaceChildren();
+  $("body").querySelectorAll(".eid").forEach((s) => s.onclick = () => {
+    const ev = evidence[s.dataset.id];
+    $("evidence-pop").style.display = "block";
+    $("evidence-pop").textContent = ev ? `${ev.id}\n${ev.source}${ev.url ? "\n" + ev.url : ""}\n\n${ev.summary}` : s.dataset.id + " (no record)";
+  });
+  $("evidence-pop").style.display = "none";
+  $("calls").textContent = JSON.stringify(r.tool_calls, null, 2);
+  $("report").className = "card catalog on";
+  if (r.needs_clarification) { $("q").value = ""; $("q").placeholder = "Answer the question above…"; $("q").focus(); }
+}
+
+$("ask").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const message = $("q").value.trim();
+  if (!message) return;
+  activeQuestion = message;
+  if (source) source.close();
+  Object.keys(desks).forEach((k) => delete desks[k]);
+  $("rounds").replaceChildren(); $("log").replaceChildren();
+  $("board").className = "card on"; $("investigation-title").textContent = "Live investigation";
+  $("report").className = "card catalog";
+  $("status").textContent = "investigating…"; $("go").disabled = true;
+  const params = new URLSearchParams({ message });
+  if (sessionId) params.set("session_id", sessionId);
+  source = new EventSource("/stream?" + params);
+  source.onmessage = (m) => { try { onEvent(JSON.parse(m.data)); } catch (error) { log("Could not display an update: " + error.message, "err"); } };
+  source.onerror = () => { log("Lost the connection to the server. Check the terminal running app.py for details.", "err"); finish("failed"); };
+});
+
+// Shareable cases: /?q=Is+Strangers+on+a+Train+public+domain opens the case straight away
+const preset = new URLSearchParams(location.search).get("q");
+if (preset) { $("q").value = preset; $("ask").requestSubmit(); }
+</script>
+</body>
+</html>

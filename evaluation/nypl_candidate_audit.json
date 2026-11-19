@@ -1,0 +1,1034 @@
+{
+  "generated_utc": "2026-11-19T01:44:15.049481+00:00",
+  "cases": [
+    {
+      "category": "renewed",
+      "title": "Strangers on a Train",
+      "author": "Patricia Highsmith",
+      "year": 1950,
+      "original_registration_number": "A41904",
+      "registration_lookup": {
+        "source": "NYPL Catalog of Copyright Entries, registrations (book volumes 1923-1969)",
+        "query": {
+          "title": "Strangers on a Train",
+          "author": "Patricia Highsmith",
+          "year_from": 1948,
+          "year_to": 1952
+        },
+        "candidates_scanned": 2,
+        "scan_truncated": false,
+        "retrieval_note": "All matches to the applied SQL filters were considered.",
+        "results": [
+          {
+            "regnum": "A41904",
+            "regdate": "1950-03-15",
+            "authors": "HIGHSMITH, PATRICIA.",
+            "title": "Strangers on a train.",
+            "publisher": "Harper",
+            "pubdate": null,
+            "source_file": "data/nypl_registrations/xml/1950/1950_v4_n1.xml",
+            "entry_id": "404B12DE-79DE-1014-B198-F9D02DA5A3BD",
+            "renewal_id": "R663598",
+            "renewal_date": "1977-06-06",
+            "renewal_claimants": "Mary Patricia Highsmith|A",
+            "match_status": "exact_key_candidate",
+            "match_score": 120,
+            "eid": "REG:404B12DE-79DE-1014-B198-F9D02DA5A3BD",
+            "class": "A: book published in the U.S.",
+            "renewal_eid": "REN:R663598"
+          },
+          {
+            "regnum": "AFO6913",
+            "regdate": "1951-11-30",
+            "authors": "HIGHSMITH, PATRICIA",
+            "title": "L'inconnu du nord-express (Strangers on a train) roman; traduit de l'américain par Jean Rosenthal.",
+            "publisher": "Calmann-Lévy",
+            "pubdate": null,
+            "source_file": "data/nypl_registrations/xml/1952/cc361libr_001-263.xml",
+            "entry_id": "E3280F74-6E15-1014-9EF1-AF99805A40AD",
+            "renewal_id": "RE30907",
+            "renewal_date": "1979-07-11",
+            "renewal_claimants": "Jean Rosenthal|A",
+            "match_status": "exact_key_candidate",
+            "match_score": 100,
+            "eid": "REG:E3280F74-6E15-1014-9EF1-AF99805A40AD",
+            "class": "AF: ad interim / foreign-language or foreign-published book",
+            "renewal_eid": "REN:RE30907"
+          }
+        ],
+        "coverage_note": "NYPL catalog transcription is not a complete inventory of every publication. A missing registration is not proof that the work was never registered."
+      },
+      "original_registration_candidates": [
+        {
+          "regnum": "A41904",
+          "regdate": "1950-03-15",
+          "authors": "HIGHSMITH, PATRICIA.",
+          "title": "Strangers on a train.",
+          "publisher": "Harper",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1950/1950_v4_n1.xml",
+          "entry_id": "404B12DE-79DE-1014-B198-F9D02DA5A3BD",
+          "renewal_id": "R663598",
+          "renewal_date": "1977-06-06",
+          "renewal_claimants": "Mary Patricia Highsmith|A",
+          "match_status": "exact_key_candidate",
+          "match_score": 120,
+          "eid": "REG:404B12DE-79DE-1014-B198-F9D02DA5A3BD",
+          "class": "A: book published in the U.S.",
+          "renewal_eid": "REN:R663598"
+        }
+      ],
+      "original_registration_date_if_unique": "1950-03-15",
+      "renewal_title_searches": [
+        {
+          "title": "Strangers on a Train",
+          "author": "Patricia Highsmith",
+          "candidates_scanned": 1,
+          "scan_truncated": false,
+          "results": [
+            {
+              "renewal_id": "R663598",
+              "renewal_date": "1977-06-06",
+              "orig_regnum": "A41904",
+              "orig_regdate": "1950-03-15",
+              "author": "Mary Patricia Highsmith.",
+              "title": "Strangers on a train.",
+              "claimants": "Mary Patricia Highsmith|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1977-1.tsv",
+              "match_score": 120,
+              "eid": "REN:R663598"
+            }
+          ]
+        },
+        {
+          "title": "Strangers on a Train",
+          "author": null,
+          "candidates_scanned": 3,
+          "scan_truncated": false,
+          "results": [
+            {
+              "renewal_id": "R663598",
+              "renewal_date": "1977-06-06",
+              "orig_regnum": "A41904",
+              "orig_regdate": "1950-03-15",
+              "author": "Mary Patricia Highsmith.",
+              "title": "Strangers on a train.",
+              "claimants": "Mary Patricia Highsmith|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1977-1.tsv",
+              "match_score": 120,
+              "eid": "REN:R663598"
+            },
+            {
+              "renewal_id": "RE30907",
+              "renewal_date": "1979-07-11",
+              "orig_regnum": "AFO6913",
+              "orig_regdate": "1951-11-30",
+              "author": null,
+              "title": "L'Inconnu du Nord Express. De Patricia Highsmith, translation: Jean Rosenthal.|Strangers on the train.",
+              "claimants": "Jean Rosenthal|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1979-from-db.tsv",
+              "match_score": 95,
+              "eid": "REN:RE30907"
+            },
+            {
+              "renewal_id": "R199159",
+              "renewal_date": "1957-09-16",
+              "orig_regnum": "B84479",
+              "orig_regdate": "1930-08-29",
+              "author": "MOFFAT, DONALD.",
+              "title": "Englishmen never speak to strangers in trains. (In New Yorker, Aug. 30, 1930)",
+              "claimants": "Donald Moffat|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1957-1.tsv",
+              "match_score": 62,
+              "eid": "REN:R199159"
+            }
+          ]
+        }
+      ],
+      "renewals_referring_to_original_number": [
+        {
+          "renewal_id": "R663598",
+          "renewal_date": "1977-06-06",
+          "orig_regnum": "A41904",
+          "orig_regdate": "1950-03-15",
+          "title": "Strangers on a train.",
+          "author": "Mary Patricia Highsmith.",
+          "claimants": "Mary Patricia Highsmith|A",
+          "source_file": "data/nypl_renewals/data/1977-1.tsv",
+          "relationship": "same_registration_number_and_date_candidate_needs_edition_review"
+        }
+      ],
+      "original_number_lookup_truncated": false,
+      "distinct_title_search_candidates": [
+        {
+          "renewal_id": "R663598",
+          "renewal_date": "1977-06-06",
+          "orig_regnum": "A41904",
+          "orig_regdate": "1950-03-15",
+          "author": "Mary Patricia Highsmith.",
+          "title": "Strangers on a train.",
+          "claimants": "Mary Patricia Highsmith|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1977-1.tsv",
+          "match_score": 120,
+          "eid": "REN:R663598",
+          "relationship": "same_registration_number_and_date_candidate_needs_edition_review",
+          "candidate_key": "R663598|A41904|1950-03-15|data/nypl_renewals/data/1977-1.tsv"
+        },
+        {
+          "renewal_id": "RE30907",
+          "renewal_date": "1979-07-11",
+          "orig_regnum": "AFO6913",
+          "orig_regdate": "1951-11-30",
+          "author": null,
+          "title": "L'Inconnu du Nord Express. De Patricia Highsmith, translation: Jean Rosenthal.|Strangers on the train.",
+          "claimants": "Jean Rosenthal|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1979-from-db.tsv",
+          "match_score": 95,
+          "eid": "REN:RE30907",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE30907|AFO6913|1951-11-30|data/nypl_renewals/data/1979-from-db.tsv"
+        },
+        {
+          "renewal_id": "R199159",
+          "renewal_date": "1957-09-16",
+          "orig_regnum": "B84479",
+          "orig_regdate": "1930-08-29",
+          "author": "MOFFAT, DONALD.",
+          "title": "Englishmen never speak to strangers in trains. (In New Yorker, Aug. 30, 1930)",
+          "claimants": "Donald Moffat|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1957-1.tsv",
+          "match_score": 62,
+          "eid": "REN:R199159",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "R199159|B84479|1930-08-29|data/nypl_renewals/data/1957-1.tsv"
+        }
+      ],
+      "renewal_id_key_conflicts": {},
+      "interpretation": "A returned candidate is NOT a verified renewal of this original edition. Compare original registration number/date, title, claimants, source files and whether renewed matter relates to the same edition. No hit does not prove nonrenewal."
+    },
+    {
+      "category": "unresolved",
+      "title": "The Price of Salt",
+      "author": "Patricia Highsmith",
+      "year": 1952,
+      "original_registration_number": "A68131",
+      "registration_lookup": {
+        "source": "NYPL Catalog of Copyright Entries, registrations (book volumes 1923-1969)",
+        "query": {
+          "title": "The Price of Salt",
+          "author": "Patricia Highsmith",
+          "year_from": 1950,
+          "year_to": 1954
+        },
+        "candidates_scanned": 1,
+        "scan_truncated": false,
+        "retrieval_note": "All matches to the applied SQL filters were considered.",
+        "results": [
+          {
+            "regnum": "A68131",
+            "regdate": "1952-04-15",
+            "authors": "HIGHSMITH, PATRICIA; Claire Morgan",
+            "title": "The price of salt",
+            "publisher": "Coward-McCann",
+            "pubdate": null,
+            "source_file": "data/nypl_registrations/xml/1952/cc361libr_443-690.xml",
+            "entry_id": "795B643A-6E97-1014-9357-E9A0C844EAF1",
+            "renewal_id": null,
+            "renewal_date": null,
+            "renewal_claimants": null,
+            "match_status": "no_exact_key_match",
+            "match_score": 120,
+            "eid": "REG:795B643A-6E97-1014-9357-E9A0C844EAF1",
+            "class": "A: book published in the U.S."
+          }
+        ],
+        "coverage_note": "NYPL catalog transcription is not a complete inventory of every publication. A missing registration is not proof that the work was never registered."
+      },
+      "original_registration_candidates": [
+        {
+          "regnum": "A68131",
+          "regdate": "1952-04-15",
+          "authors": "HIGHSMITH, PATRICIA; Claire Morgan",
+          "title": "The price of salt",
+          "publisher": "Coward-McCann",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1952/cc361libr_443-690.xml",
+          "entry_id": "795B643A-6E97-1014-9357-E9A0C844EAF1",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 120,
+          "eid": "REG:795B643A-6E97-1014-9357-E9A0C844EAF1",
+          "class": "A: book published in the U.S."
+        }
+      ],
+      "original_registration_date_if_unique": "1952-04-15",
+      "renewal_title_searches": [
+        {
+          "title": "The Price of Salt",
+          "author": "Patricia Highsmith",
+          "candidates_scanned": 0,
+          "scan_truncated": false,
+          "results": []
+        },
+        {
+          "title": "The Price of Salt",
+          "author": null,
+          "candidates_scanned": 0,
+          "scan_truncated": false,
+          "results": []
+        },
+        {
+          "title": "Carol",
+          "author": "Patricia Highsmith",
+          "candidates_scanned": 0,
+          "scan_truncated": false,
+          "results": []
+        },
+        {
+          "title": "Carol",
+          "author": null,
+          "candidates_scanned": 920,
+          "scan_truncated": false,
+          "results": [
+            {
+              "renewal_id": "RE231827",
+              "renewal_date": "1984-12-20",
+              "orig_regnum": "A242936",
+              "orig_regdate": "1956-06-27",
+              "author": "Bernadine Bailey.",
+              "title": "Carol Carson.",
+              "claimants": "Bernadine Bailey|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1984-from-db.tsv",
+              "match_score": 105,
+              "eid": "REN:RE231827"
+            },
+            {
+              "renewal_id": "R572707",
+              "renewal_date": "1974-03-11",
+              "orig_regnum": "A6258",
+              "orig_regdate": "1946-10-15",
+              "author": "Helen Dore Boylston.",
+              "title": "Carol on tour.",
+              "claimants": "Helen Dore Boylston|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1974-1.tsv",
+              "match_score": 105,
+              "eid": "REN:R572707"
+            },
+            {
+              "renewal_id": "R205968",
+              "renewal_date": "1958-01-09",
+              "orig_regnum": "A18776",
+              "orig_regdate": "1930-02-14",
+              "author": "SILVERS, EARL REED.",
+              "title": "Carol of Cranford High.",
+              "claimants": "Edith J. Silvers|W",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1958-1.tsv",
+              "match_score": 105,
+              "eid": "REN:R205968"
+            },
+            {
+              "renewal_id": "R471217",
+              "renewal_date": "1969-10-24",
+              "orig_regnum": "A166960",
+              "orig_regdate": "1942-09-09",
+              "author": "BOYLSTON, HELEN DORE.",
+              "title": "Carol plays summer stock.",
+              "claimants": "Helen Dore Boylston|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1969-1.tsv",
+              "match_score": 105,
+              "eid": "REN:R471217"
+            },
+            {
+              "renewal_id": "RE341218",
+              "renewal_date": "1987-06-09",
+              "orig_regnum": "A385850",
+              "orig_regdate": "1959-04-16",
+              "author": "Helen Dickson Reynolds.",
+              "title": "Carol of Long Chance Mine.",
+              "claimants": "Gerald Blackett Reynolds|C||Ruth Quayle Grant|C||Mary Olivia Seal|C",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1987-from-db.tsv",
+              "match_score": 105,
+              "eid": "REN:RE341218"
+            },
+            {
+              "renewal_id": "RE26795",
+              "renewal_date": "1979-05-17",
+              "orig_regnum": "A60263",
+              "orig_regdate": "1951-10-18",
+              "author": "Lorraine Beim.",
+              "title": "Carol's side of the street.",
+              "claimants": "Andrew L. Beim|PPW",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1979-from-db.tsv",
+              "match_score": 105,
+              "eid": "REN:RE26795"
+            },
+            {
+              "renewal_id": "RE402641",
+              "renewal_date": "1988-11-28",
+              "orig_regnum": "A478530",
+              "orig_regdate": "1960-11-17",
+              "author": null,
+              "title": "Carol Lynley stand up doll. No. 2089.",
+              "claimants": "Western Publishing Company, Inc.|PWH",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1988-from-db.tsv",
+              "match_score": 105,
+              "eid": "REN:RE402641"
+            },
+            {
+              "renewal_id": "R552332",
+              "renewal_date": "1973-05-17",
+              "orig_regnum": "A189367",
+              "orig_regdate": "1945-08-14",
+              "author": "VARGA, MARGIT.",
+              "title": "Carol Brant, picture magazine reporter.",
+              "claimants": "Margit Varga|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1973-1.tsv",
+              "match_score": 105,
+              "eid": "REN:R552332"
+            },
+            {
+              "renewal_id": "R509574",
+              "renewal_date": "1971-07-06",
+              "orig_regnum": "A180580",
+              "orig_regdate": "1944-05-09",
+              "author": "BOYLSTON, HELEN DORE.",
+              "title": "Carol on Broadway. Illustrated by Major Felten.",
+              "claimants": "Helen Dore Boylston|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1971-1.tsv",
+              "match_score": 105,
+              "eid": "REN:R509574"
+            },
+            {
+              "renewal_id": "RE194096",
+              "renewal_date": "1984-02-02",
+              "orig_regnum": "A246116",
+              "orig_regdate": "1956-03-23",
+              "author": null,
+              "title": "Carol Trent, air stewardess. Text: Jeanne Judson.",
+              "claimants": "Pamela Roberts|C",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1984-from-db.tsv",
+              "match_score": 105,
+              "eid": "REN:RE194096"
+            },
+            {
+              "renewal_id": "RE314756",
+              "renewal_date": "1986-12-19",
+              "orig_regnum": "B752224",
+              "orig_regdate": "1958-12-08",
+              "author": "Langston Hughes.",
+              "title": "Carol of the brown king; poem.|The Crisis, Dec. 1958",
+              "claimants": "George Houston Bass|E",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 105,
+              "eid": "REN:RE314756"
+            },
+            {
+              "renewal_id": "R454311",
+              "renewal_date": "1969-01-24",
+              "orig_regnum": "A158586",
+              "orig_regdate": "1941-11-05",
+              "author": "BOYLSTON, HELEN DORE.",
+              "title": "Carol goes backstage. With illus. by Frederick E. Wallace.",
+              "claimants": "Helen Dore Boylston|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1969-1.tsv",
+              "match_score": 105,
+              "eid": "REN:R454311"
+            }
+          ]
+        },
+        {
+          "title": "Price of Salt",
+          "author": "Patricia Highsmith",
+          "candidates_scanned": 0,
+          "scan_truncated": false,
+          "results": []
+        },
+        {
+          "title": "Price of Salt",
+          "author": null,
+          "candidates_scanned": 0,
+          "scan_truncated": false,
+          "results": []
+        }
+      ],
+      "renewals_referring_to_original_number": [],
+      "original_number_lookup_truncated": false,
+      "distinct_title_search_candidates": [
+        {
+          "renewal_id": "RE231827",
+          "renewal_date": "1984-12-20",
+          "orig_regnum": "A242936",
+          "orig_regdate": "1956-06-27",
+          "author": "Bernadine Bailey.",
+          "title": "Carol Carson.",
+          "claimants": "Bernadine Bailey|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1984-from-db.tsv",
+          "match_score": 105,
+          "eid": "REN:RE231827",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE231827|A242936|1956-06-27|data/nypl_renewals/data/1984-from-db.tsv"
+        },
+        {
+          "renewal_id": "R572707",
+          "renewal_date": "1974-03-11",
+          "orig_regnum": "A6258",
+          "orig_regdate": "1946-10-15",
+          "author": "Helen Dore Boylston.",
+          "title": "Carol on tour.",
+          "claimants": "Helen Dore Boylston|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1974-1.tsv",
+          "match_score": 105,
+          "eid": "REN:R572707",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "R572707|A6258|1946-10-15|data/nypl_renewals/data/1974-1.tsv"
+        },
+        {
+          "renewal_id": "R205968",
+          "renewal_date": "1958-01-09",
+          "orig_regnum": "A18776",
+          "orig_regdate": "1930-02-14",
+          "author": "SILVERS, EARL REED.",
+          "title": "Carol of Cranford High.",
+          "claimants": "Edith J. Silvers|W",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1958-1.tsv",
+          "match_score": 105,
+          "eid": "REN:R205968",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "R205968|A18776|1930-02-14|data/nypl_renewals/data/1958-1.tsv"
+        },
+        {
+          "renewal_id": "R471217",
+          "renewal_date": "1969-10-24",
+          "orig_regnum": "A166960",
+          "orig_regdate": "1942-09-09",
+          "author": "BOYLSTON, HELEN DORE.",
+          "title": "Carol plays summer stock.",
+          "claimants": "Helen Dore Boylston|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1969-1.tsv",
+          "match_score": 105,
+          "eid": "REN:R471217",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "R471217|A166960|1942-09-09|data/nypl_renewals/data/1969-1.tsv"
+        },
+        {
+          "renewal_id": "RE341218",
+          "renewal_date": "1987-06-09",
+          "orig_regnum": "A385850",
+          "orig_regdate": "1959-04-16",
+          "author": "Helen Dickson Reynolds.",
+          "title": "Carol of Long Chance Mine.",
+          "claimants": "Gerald Blackett Reynolds|C||Ruth Quayle Grant|C||Mary Olivia Seal|C",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1987-from-db.tsv",
+          "match_score": 105,
+          "eid": "REN:RE341218",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE341218|A385850|1959-04-16|data/nypl_renewals/data/1987-from-db.tsv"
+        },
+        {
+          "renewal_id": "RE26795",
+          "renewal_date": "1979-05-17",
+          "orig_regnum": "A60263",
+          "orig_regdate": "1951-10-18",
+          "author": "Lorraine Beim.",
+          "title": "Carol's side of the street.",
+          "claimants": "Andrew L. Beim|PPW",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1979-from-db.tsv",
+          "match_score": 105,
+          "eid": "REN:RE26795",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE26795|A60263|1951-10-18|data/nypl_renewals/data/1979-from-db.tsv"
+        },
+        {
+          "renewal_id": "RE402641",
+          "renewal_date": "1988-11-28",
+          "orig_regnum": "A478530",
+          "orig_regdate": "1960-11-17",
+          "author": null,
+          "title": "Carol Lynley stand up doll. No. 2089.",
+          "claimants": "Western Publishing Company, Inc.|PWH",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1988-from-db.tsv",
+          "match_score": 105,
+          "eid": "REN:RE402641",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE402641|A478530|1960-11-17|data/nypl_renewals/data/1988-from-db.tsv"
+        },
+        {
+          "renewal_id": "R552332",
+          "renewal_date": "1973-05-17",
+          "orig_regnum": "A189367",
+          "orig_regdate": "1945-08-14",
+          "author": "VARGA, MARGIT.",
+          "title": "Carol Brant, picture magazine reporter.",
+          "claimants": "Margit Varga|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1973-1.tsv",
+          "match_score": 105,
+          "eid": "REN:R552332",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "R552332|A189367|1945-08-14|data/nypl_renewals/data/1973-1.tsv"
+        },
+        {
+          "renewal_id": "R509574",
+          "renewal_date": "1971-07-06",
+          "orig_regnum": "A180580",
+          "orig_regdate": "1944-05-09",
+          "author": "BOYLSTON, HELEN DORE.",
+          "title": "Carol on Broadway. Illustrated by Major Felten.",
+          "claimants": "Helen Dore Boylston|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1971-1.tsv",
+          "match_score": 105,
+          "eid": "REN:R509574",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "R509574|A180580|1944-05-09|data/nypl_renewals/data/1971-1.tsv"
+        },
+        {
+          "renewal_id": "RE194096",
+          "renewal_date": "1984-02-02",
+          "orig_regnum": "A246116",
+          "orig_regdate": "1956-03-23",
+          "author": null,
+          "title": "Carol Trent, air stewardess. Text: Jeanne Judson.",
+          "claimants": "Pamela Roberts|C",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1984-from-db.tsv",
+          "match_score": 105,
+          "eid": "REN:RE194096",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE194096|A246116|1956-03-23|data/nypl_renewals/data/1984-from-db.tsv"
+        },
+        {
+          "renewal_id": "RE314756",
+          "renewal_date": "1986-12-19",
+          "orig_regnum": "B752224",
+          "orig_regdate": "1958-12-08",
+          "author": "Langston Hughes.",
+          "title": "Carol of the brown king; poem.|The Crisis, Dec. 1958",
+          "claimants": "George Houston Bass|E",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+          "match_score": 105,
+          "eid": "REN:RE314756",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE314756|B752224|1958-12-08|data/nypl_renewals/data/1986-from-db.tsv"
+        },
+        {
+          "renewal_id": "R454311",
+          "renewal_date": "1969-01-24",
+          "orig_regnum": "A158586",
+          "orig_regdate": "1941-11-05",
+          "author": "BOYLSTON, HELEN DORE.",
+          "title": "Carol goes backstage. With illus. by Frederick E. Wallace.",
+          "claimants": "Helen Dore Boylston|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1969-1.tsv",
+          "match_score": 105,
+          "eid": "REN:R454311",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "R454311|A158586|1941-11-05|data/nypl_renewals/data/1969-1.tsv"
+        }
+      ],
+      "renewal_id_key_conflicts": {},
+      "interpretation": "A returned candidate is NOT a verified renewal of this original edition. Compare original registration number/date, title, claimants, source files and whether renewed matter relates to the same edition. No hit does not prove nonrenewal."
+    },
+    {
+      "category": "possible_conflict",
+      "title": "The World of Carbon",
+      "author": "Isaac Asimov",
+      "year": 1958,
+      "original_registration_number": "A352575",
+      "registration_lookup": {
+        "source": "NYPL Catalog of Copyright Entries, registrations (book volumes 1923-1969)",
+        "query": {
+          "title": "The World of Carbon",
+          "author": "Isaac Asimov",
+          "year_from": 1956,
+          "year_to": 1960
+        },
+        "candidates_scanned": 1,
+        "scan_truncated": false,
+        "retrieval_note": "All matches to the applied SQL filters were considered.",
+        "results": [
+          {
+            "regnum": "A352575",
+            "regdate": "1958-08-22",
+            "authors": null,
+            "title": "The world of carbon. Abelard-Schuman.",
+            "publisher": "Isaac Asimov",
+            "pubdate": null,
+            "source_file": "data/nypl_registrations/xml/1958/1958_v12_n2.xml",
+            "entry_id": "14A88E33-72C4-1014-84F6-87703AD4166D",
+            "renewal_id": "RE277631",
+            "renewal_date": "1986-01-06",
+            "renewal_claimants": "Isaac Asimov|A",
+            "match_status": "exact_key_candidate",
+            "match_score": 93,
+            "eid": "REG:14A88E33-72C4-1014-84F6-87703AD4166D",
+            "class": "A: book published in the U.S.",
+            "renewal_eid": "REN:RE277631"
+          }
+        ],
+        "coverage_note": "NYPL catalog transcription is not a complete inventory of every publication. A missing registration is not proof that the work was never registered."
+      },
+      "original_registration_candidates": [
+        {
+          "regnum": "A352575",
+          "regdate": "1958-08-22",
+          "authors": null,
+          "title": "The world of carbon. Abelard-Schuman.",
+          "publisher": "Isaac Asimov",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1958/1958_v12_n2.xml",
+          "entry_id": "14A88E33-72C4-1014-84F6-87703AD4166D",
+          "renewal_id": "RE277631",
+          "renewal_date": "1986-01-06",
+          "renewal_claimants": "Isaac Asimov|A",
+          "match_status": "exact_key_candidate",
+          "match_score": 93,
+          "eid": "REG:14A88E33-72C4-1014-84F6-87703AD4166D",
+          "class": "A: book published in the U.S.",
+          "renewal_eid": "REN:RE277631"
+        }
+      ],
+      "original_registration_date_if_unique": "1958-08-22",
+      "renewal_title_searches": [
+        {
+          "title": "The World of Carbon",
+          "author": "Isaac Asimov",
+          "candidates_scanned": 3,
+          "scan_truncated": false,
+          "results": [
+            {
+              "renewal_id": "RE476868",
+              "renewal_date": "1990-04-05",
+              "orig_regnum": "A557886",
+              "orig_regdate": "1962-03-28",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1990-from-db.tsv",
+              "match_score": 120,
+              "eid": "REN:RE476868"
+            },
+            {
+              "renewal_id": "RE277631",
+              "renewal_date": "1986-01-06",
+              "orig_regnum": "A352575",
+              "orig_regdate": "1958-08-22",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 120,
+              "eid": "REN:RE277631"
+            },
+            {
+              "renewal_id": "RE277631",
+              "renewal_date": "1986-01-06",
+              "orig_regnum": "AI5926",
+              "orig_regdate": "1958-04-01",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 120,
+              "eid": "REN:RE277631"
+            }
+          ]
+        },
+        {
+          "title": "The World of Carbon",
+          "author": null,
+          "candidates_scanned": 3,
+          "scan_truncated": false,
+          "results": [
+            {
+              "renewal_id": "RE476868",
+              "renewal_date": "1990-04-05",
+              "orig_regnum": "A557886",
+              "orig_regdate": "1962-03-28",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1990-from-db.tsv",
+              "match_score": 120,
+              "eid": "REN:RE476868"
+            },
+            {
+              "renewal_id": "RE277631",
+              "renewal_date": "1986-01-06",
+              "orig_regnum": "A352575",
+              "orig_regdate": "1958-08-22",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 120,
+              "eid": "REN:RE277631"
+            },
+            {
+              "renewal_id": "RE277631",
+              "renewal_date": "1986-01-06",
+              "orig_regnum": "AI5926",
+              "orig_regdate": "1958-04-01",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 120,
+              "eid": "REN:RE277631"
+            }
+          ]
+        },
+        {
+          "title": "World of Carbon",
+          "author": "Isaac Asimov",
+          "candidates_scanned": 3,
+          "scan_truncated": false,
+          "results": [
+            {
+              "renewal_id": "RE476868",
+              "renewal_date": "1990-04-05",
+              "orig_regnum": "A557886",
+              "orig_regdate": "1962-03-28",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1990-from-db.tsv",
+              "match_score": 100,
+              "eid": "REN:RE476868"
+            },
+            {
+              "renewal_id": "RE277631",
+              "renewal_date": "1986-01-06",
+              "orig_regnum": "A352575",
+              "orig_regdate": "1958-08-22",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 100,
+              "eid": "REN:RE277631"
+            },
+            {
+              "renewal_id": "RE277631",
+              "renewal_date": "1986-01-06",
+              "orig_regnum": "AI5926",
+              "orig_regdate": "1958-04-01",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 100,
+              "eid": "REN:RE277631"
+            }
+          ]
+        },
+        {
+          "title": "World of Carbon",
+          "author": null,
+          "candidates_scanned": 3,
+          "scan_truncated": false,
+          "results": [
+            {
+              "renewal_id": "RE476868",
+              "renewal_date": "1990-04-05",
+              "orig_regnum": "A557886",
+              "orig_regdate": "1962-03-28",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1990-from-db.tsv",
+              "match_score": 100,
+              "eid": "REN:RE476868"
+            },
+            {
+              "renewal_id": "RE277631",
+              "renewal_date": "1986-01-06",
+              "orig_regnum": "A352575",
+              "orig_regdate": "1958-08-22",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 100,
+              "eid": "REN:RE277631"
+            },
+            {
+              "renewal_id": "RE277631",
+              "renewal_date": "1986-01-06",
+              "orig_regnum": "AI5926",
+              "orig_regdate": "1958-04-01",
+              "author": "Isaac Asimov.",
+              "title": "The World of carbon.",
+              "claimants": "Isaac Asimov|A",
+              "new_matter": null,
+              "notes": null,
+              "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+              "match_score": 100,
+              "eid": "REN:RE277631"
+            }
+          ]
+        }
+      ],
+      "renewals_referring_to_original_number": [
+        {
+          "renewal_id": "RE277631",
+          "renewal_date": "1986-01-06",
+          "orig_regnum": "A352575",
+          "orig_regdate": "1958-08-22",
+          "title": "The World of carbon.",
+          "author": "Isaac Asimov.",
+          "claimants": "Isaac Asimov|A",
+          "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+          "relationship": "same_registration_number_and_date_candidate_needs_edition_review"
+        }
+      ],
+      "original_number_lookup_truncated": false,
+      "distinct_title_search_candidates": [
+        {
+          "renewal_id": "RE476868",
+          "renewal_date": "1990-04-05",
+          "orig_regnum": "A557886",
+          "orig_regdate": "1962-03-28",
+          "author": "Isaac Asimov.",
+          "title": "The World of carbon.",
+          "claimants": "Isaac Asimov|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1990-from-db.tsv",
+          "match_score": 120,
+          "eid": "REN:RE476868",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE476868|A557886|1962-03-28|data/nypl_renewals/data/1990-from-db.tsv"
+        },
+        {
+          "renewal_id": "RE277631",
+          "renewal_date": "1986-01-06",
+          "orig_regnum": "A352575",
+          "orig_regdate": "1958-08-22",
+          "author": "Isaac Asimov.",
+          "title": "The World of carbon.",
+          "claimants": "Isaac Asimov|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+          "match_score": 120,
+          "eid": "REN:RE277631",
+          "relationship": "same_registration_number_and_date_candidate_needs_edition_review",
+          "candidate_key": "RE277631|A352575|1958-08-22|data/nypl_renewals/data/1986-from-db.tsv"
+        },
+        {
+          "renewal_id": "RE277631",
+          "renewal_date": "1986-01-06",
+          "orig_regnum": "AI5926",
+          "orig_regdate": "1958-04-01",
+          "author": "Isaac Asimov.",
+          "title": "The World of carbon.",
+          "claimants": "Isaac Asimov|A",
+          "new_matter": null,
+          "notes": null,
+          "source_file": "data/nypl_renewals/data/1986-from-db.tsv",
+          "match_score": 120,
+          "eid": "REN:RE277631",
+          "relationship": "different_original_registration_number",
+          "candidate_key": "RE277631|AI5926|1958-04-01|data/nypl_renewals/data/1986-from-db.tsv"
+        }
+      ],
+      "renewal_id_key_conflicts": {
+        "RE277631": [
+          [
+            "A352575",
+            "1958-08-22"
+          ],
+          [
+            "AI5926",
+            "1958-04-01"
+          ]
+        ]
+      },
+      "interpretation": "A returned candidate is NOT a verified renewal of this original edition. Compare original registration number/date, title, claimants, source files and whether renewed matter relates to the same edition. No hit does not prove nonrenewal."
+    }
+  ]
+}

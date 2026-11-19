@@ -1,0 +1,18 @@
+[project]
+name = "book-copyright-agent"
+version = "0.1.0"
+description = "Public Domain Detective: a deep-research agent that investigates the U.S. copyright status of 1931-1963 books from Copyright Office registration and renewal records"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
+    "openai-agents[litellm]>=0.22",
+    "google-cloud-aiplatform>=1.40.0",
+    "httpx>=0.27",
+    "python-dotenv>=1.0",
+    "duckdb>=1.1",
+    "rapidfuzz>=3.9",
+]
+
+[dependency-groups]
+build = ["lxml>=5.0"]

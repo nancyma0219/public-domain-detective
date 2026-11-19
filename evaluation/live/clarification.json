@@ -1,0 +1,40 @@
+{
+  "case_id": "clarification",
+  "question": "Is my grandmother's old novel free to use?",
+  "description": "Should ask for title/author before researching.",
+  "timestamp_utc": "2026-11-19T01:56:30.191748+00:00",
+  "elapsed_seconds": 1.55,
+  "review": {
+    "checks": {
+      "no_server_error": true,
+      "has_response": true,
+      "all_bracket_citations_in_evidence": true,
+      "all_tool_calls_tagged_with_agent": true,
+      "asked_for_clarification": true,
+      "no_research_launched": true
+    },
+    "passed": 6,
+    "total": 6,
+    "rounds": 0,
+    "researchers": 0,
+    "tool_calls": 0,
+    "tools": [],
+    "agents": [],
+    "citations": [],
+    "manual_review_required": [
+      "Confirm facts, citations, original registration and renewal keys against source rows",
+      "Check response directly answers the user question and explains uncertainty",
+      "Check whether follow-up investigation was justified, not simply longer",
+      "Check digital availability assertions are source-scoped"
+    ]
+  },
+  "result": {
+    "session_id": "e49b87a5-4c04-4a3a-8438-afab9fe6f424",
+    "response": "Could you please provide the title of your grandmother's novel, or let me know its author and approximate publication year?",
+    "needs_clarification": true,
+    "tool_calls": [],
+    "rounds": 0,
+    "researchers": 0,
+    "evidence": []
+  }
+}

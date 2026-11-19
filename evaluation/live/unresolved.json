@@ -1,0 +1,994 @@
+{
+  "case_id": "unresolved",
+  "question": "Is The Price of Salt by Patricia Highsmith, published as Claire Morgan in 1952, in the public domain in the United States?",
+  "description": "No exact-key renewal; examine alternative titles, pseudonym, and false positives.",
+  "timestamp_utc": "2026-11-19T01:53:08.202168+00:00",
+  "elapsed_seconds": 36.73,
+  "review": {
+    "checks": {
+      "no_server_error": true,
+      "has_response": true,
+      "all_bracket_citations_in_evidence": true,
+      "all_tool_calls_tagged_with_agent": true,
+      "not_clarification": true,
+      "researchers_launched": true,
+      "writer_and_citation_check": true,
+      "ran_followup_round": true
+    },
+    "passed": 8,
+    "total": 8,
+    "rounds": 2,
+    "researchers": 5,
+    "tool_calls": 24,
+    "tools": [
+      "search_registrations",
+      "gutenberg_search",
+      "openlibrary_search",
+      "openlibrary_search",
+      "search_renewals",
+      "openlibrary_author",
+      "openlibrary_author",
+      "search_renewals",
+      "search_registrations",
+      "search_registrations",
+      "verify_record_link",
+      "check_us_status",
+      "review_research_gaps",
+      "dispatch_researchers",
+      "query_records",
+      "hathitrust_lookup",
+      "search_registrations",
+      "hathitrust_lookup",
+      "search_renewals",
+      "query_records",
+      "check_us_status",
+      "review_research_gaps",
+      "dispatch_researchers",
+      "check_citations"
+    ],
+    "agents": [
+      "CitationCheck",
+      "GapReview",
+      "Lead",
+      "Researcher 1",
+      "Researcher 2",
+      "Researcher 3",
+      "Researcher 4",
+      "Researcher 5"
+    ],
+    "citations": [
+      "OL:AUTHOR:OL28577A",
+      "OL:OL59448W",
+      "REG:795B643A-6E97-1014-9357-E9A0C844EAF1",
+      "RULE:1952-us-False"
+    ],
+    "manual_review_required": [
+      "Confirm facts, citations, original registration and renewal keys against source rows",
+      "Check response directly answers the user question and explains uncertainty",
+      "Check whether follow-up investigation was justified, not simply longer",
+      "Check digital availability assertions are source-scoped"
+    ]
+  },
+  "result": {
+    "session_id": "407332a2-2385-4891-8372-20f66ba1b0fc",
+    "response": "**Verdict:** Cannot determine from available records\n\n**Confidence:** low, because a search of digital databases did not identify a renewal, but a manual check of the physical Library of Congress records is required to definitively rule out a renewal.\n\n### Evidence\n- *The Price of Salt* was first published in 1952 [OL:OL59448W].\n- Author Patricia Highsmith (who wrote under the pseudonym Claire Morgan) was born on January 19, 1921, and died on February 4, 1995 [OL:AUTHOR:OL28577A].\n- The work was registered for U.S. copyright on April 15, 1952, under registration number A68131, listing the title \"The price of salt\" by Patricia Highsmith (Claire Morgan) [REG:795B643A-6E97-1014-9357-E9A0C844EAF1].\n- No matching renewal registration for original registration A68131, the title *The Price of Salt*, the alternative title *Carol*, or the author names was found in the digital renewal database for the relevant 1979–1981 window [RULE:1952-us-False].\n\n### What these records can't tell us\n- Whether a renewal was filed under an alternate title or variant spelling that was not properly linked or indexed in this digital database. A manual search of physical Library of Congress records is necessary to confirm non-renewal.\n- Whether the first edition of the book contained a legally valid copyright notice.\n\n### Digitized copies and access\n- **Open Library:** A record exists with borrowable ebook access [OL:OL59448W].\n- **HathiTrust:** No matching copy was found in the HathiTrust catalog in searches using LCCN 52-8026 and OCLC numbers 32734256 or 22860658.\n- **Project Gutenberg:** No matching copy was found in Project Gutenberg in this search.\n\n_Not legal advice. Records: NYPL Catalog of Copyright Entries transcriptions._\n\n### Sources\n- `OL:OL59448W` Open Library — https://openlibrary.org/works/OL59448W\n- `OL:AUTHOR:OL28577A` Open Library Authors API — https://openlibrary.org/authors/OL28577A\n- `REG:795B643A-6E97-1014-9357-E9A0C844EAF1` NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)\n- `RULE:1952-us-False` U.S. Copyright Office Circular 15A (Duration) and Circular 22 (How to Investigate the Copyright Status of a Work), https://www.copyright.gov/circs/circ22.pdf",
+    "needs_clarification": false,
+    "tool_calls": [
+      {
+        "agent": "Researcher 1",
+        "name": "search_registrations",
+        "arguments": {
+          "author": "Morgan",
+          "year_from": 1951,
+          "year_to": 1953,
+          "title": "Price of Salt"
+        },
+        "output": "{\"source\": \"NYPL Catalog of Copyright Entries, registrations (book volumes 1923-1969)\", \"query\": {\"title\": \"Price of Salt\", \"author\": \"Morgan\", \"year_from\": 1951, \"year_to\": 1953}, \"candidates_scanned\": 1, \"scan_truncated\": false, \"retrieval_note\": \"All matches to the applied SQL filters were considered.\", \"results\": [{\"regnum\": \"A68131\", \"regdate\": \"1952-04-15\", \"authors\": \"HIGHSMITH, PATRICIA; Claire Morgan\", \"title\": \"The price of salt\", \"publisher\": \"Coward-McCann\", \"pubdate\": null, \"source_file\": \"data/nypl_registrations/xml/1952/cc361libr_443-690.xml\", \"entry_id\": \"795B643A-6E97-1014-9357-E9A0C844EAF1\", \"renewal_id\": null, \"renewal_date\": null, \"renewal_claimants\": null, \"match_status\": \"no_exact_key_match\", \"match_score\": 100, \"eid\": \"REG:795B643A-6E97-1014-9357-E9A0C844EAF1\", \"class\": \"A: book published in the U.S.\"}], \"coverage_note\": \"NYPL catalog transcription is not a complete inventory of every publication. A missing registration is not proof that the work was never registered.\"}"
+      },
+      {
+        "agent": "Researcher 3",
+        "name": "gutenberg_search",
+        "arguments": {
+          "title": "The Price of Salt",
+          "author": "Claire Morgan"
+        },
+        "output": "{\"source\": \"Project Gutenberg catalog (pg_catalog.csv)\", \"results\": [], \"note\": \"Project Gutenberg (US) only posts texts it has cleared as U.S. public domain; the 'Issued' date is when Gutenberg posted it, not the original publication date.\", \"status\": \"no_results\", \"coverage_note\": \"Search results reflect this source and query only; absence is not proof of nonexistence.\", \"error\": null}"
+      },
+      {
+        "agent": "Researcher 2",
+        "name": "openlibrary_search",
+        "arguments": {
+          "author": "Patricia Highsmith",
+          "title": "The Price of Salt"
+        },
+        "output": "{\"source\": \"Open Library search API\", \"numFound\": 1, \"results\": [{\"eid\": \"OL:OL59448W\", \"url\": \"https://openlibrary.org/works/OL59448W\", \"title\": \"The Price of Salt\", \"authors\": [\"Patricia Highsmith\"], \"first_publish_year\": 1952, \"edition_count\": 72, \"publishers\": [\"W.W. Norton\", \"Columna CAT\", \"Calmann-Lévy\", \"Naiad Press\", \"Bantam Books\", \"Churchill & Dunn, Ltd\"], \"publish_places\": [\"London\", \"Milano\", \"New York\", \"Tallahassee, Fla\", \"London, UK\", \"United States\"], \"languages\": [\"spa\", \"ita\", \"ger\", \"eng\", \"chi\"], \"oclc\": [\"1099544581\", \"929572230\", \"950885993\", \"32734256\", \"22860658\"], \"lccn\": [\"2019019413\", \"52008026\", \"75012340\", \"94121362\", \"90023482\"], \"ebook_access\": \"borrowable\"}], \"status\": \"success\", \"coverage_note\": \"Search results reflect this source and query only; absence is not proof of nonexistence.\", \"error\": null}"
+      },
+      {
+        "agent": "Researcher 3",
+        "name": "openlibrary_search",
+        "arguments": {
+          "title": "The Price of Salt",
+          "author": "Claire Morgan"
+        },
+        "output": "{\"source\": \"Open Library search API\", \"numFound\": 1, \"results\": [{\"eid\": \"OL:OL59448W\", \"url\": \"https://openlibrary.org/works/OL59448W\", \"title\": \"The Price of Salt\", \"authors\": [\"Patricia Highsmith\"], \"first_publish_year\": 1952, \"edition_count\": 72, \"publishers\": [\"W.W. Norton\", \"Columna CAT\", \"Calmann-Lévy\", \"Naiad Press\", \"Bantam Books\", \"Churchill & Dunn, Ltd\"], \"publish_places\": [\"London\", \"Milano\", \"New York\", \"Tallahassee, Fla\", \"London, UK\", \"United States\"], \"languages\": [\"spa\", \"ita\", \"ger\", \"eng\", \"chi\"], \"oclc\": [\"1099544581\", \"929572230\", \"950885993\", \"32734256\", \"22860658\"], \"lccn\": [\"2019019413\", \"52008026\", \"75012340\", \"94121362\", \"90023482\"], \"ebook_access\": \"borrowable\"}], \"status\": \"success\", \"coverage_note\": \"Search results reflect this source and query only; absence is not proof of nonexistence.\", \"error\": null}"
+      },
+      {
+        "agent": "Researcher 1",
+        "name": "search_renewals",
+        "arguments": {
+          "title": "Price of Salt",
+          "author": "Highsmith"
+        },
+        "output": "{\"source\": \"NYPL CCE renewals (Catalog of Copyright Entries 1950-1977 + Copyright Office database 1978+)\", \"query\": {\"title\": \"Price of Salt\", \"author\": \"Highsmith\"}, \"candidates_scanned\": 0, \"scan_truncated\": false, \"retrieval_note\": \"All matches to the applied SQL filters were considered.\", \"results\": [], \"coverage_note\": \"No search hit does NOT prove non-renewal. Coverage gaps, transcription errors, title variants, and unmatched dates require additional investigation.\"}"
+      },
+      {
+        "agent": "Researcher 2",
+        "name": "openlibrary_author",
+        "arguments": {
+          "name": "Claire Morgan"
+        },
+        "output": "{\"source\": \"Open Library Authors API\", \"query\": \"Claire Morgan\", \"results\": [{\"eid\": \"OL:AUTHOR:OL11888307A\", \"url\": \"https://openlibrary.org/authors/OL11888307A\", \"author_id\": \"OL11888307A\", \"source\": \"Open Library Authors API\", \"name\": \"Claire Morgan\", \"born\": \"1980\", \"died\": null, \"alternate_names\": [], \"match_score\": 11}, {\"eid\": \"OL:AUTHOR:OL12093001A\", \"url\": \"https://openlibrary.org/authors/OL12093001A\", \"author_id\": \"OL12093001A\", \"source\": \"Open Library Authors API\", \"name\": \"Claire Morgan\", \"born\": null, \"died\": null, \"alternate_names\": [], \"match_score\": 10}, {\"eid\": \"OL:AUTHOR:OL12093218A\", \"url\": \"https://openlibrary.org/authors/OL12093218A\", \"author_id\": \"OL12093218A\", \"source\": \"Open Library Authors API\", \"name\": \"Claire Morgan\", \"born\": null, \"died\": null, \"alternate_names\": [], \"match_score\": 10}, {\"eid\": \"OL:AUTHOR:OL28577A\", \"url\": \"https://openlibrary.org/authors/OL28577A\", \"author_id\": \"OL28577A\", \"source\": \"Open Library Authors API\", \"name\": \"Patricia Highsmith\", \"born\": \"19 Jan 1921\", \"died\": \"4 Feb 1995\", \"alternate_names\": [\"Claire Morgan\", \"Kevin Hinkle\", \"PATRICIA HIGHSMITH\", \"HIGHSMITH PATRICIA\", \"Patricia highsmith\", \"Highsmith Patricia\"], \"match_score\": 6}, {\"eid\": \"OL:AUTHOR:OL4942690A\", \"url\": \"https://openlibrary.org/authors/OL4942690A\", \"author_id\": \"OL4942690A\", \"source\": \"Open Library Authors API\", \"name\": \"Caroline Claire Morgan\", \"born\": null, \"died\": null, \"alternate_names\": [], \"match_score\": 0}], \"note\": \"Multiple author authority records can share a name. Do not merge candidates or treat dates from one candidate as proven for another. Verify identity using aliases, titles or other records. This API does not establish nationality, citizenship, or first-publication country.\", \"status\": \"success\", \"coverage_note\": \"Search results reflect this source and query only; absence is not proof of nonexistence.\", \"error\": null}"
+      },
+      {
+        "agent": "Researcher 2",
+        "name": "openlibrary_author",
+        "arguments": {
+          "name": "Patricia Highsmith"
+        },
+        "output": "{\"source\": \"Open Library Authors API\", \"query\": \"Patricia Highsmith\", \"results\": [{\"eid\": \"OL:AUTHOR:OL28577A\", \"url\": \"https://openlibrary.org/authors/OL28577A\", \"author_id\": \"OL28577A\", \"source\": \"Open Library Authors API\", \"name\": \"Patricia Highsmith\", \"born\": \"19 Jan 1921\", \"died\": \"4 Feb 1995\", \"alternate_names\": [\"Claire Morgan\", \"Kevin Hinkle\", \"PATRICIA HIGHSMITH\", \"HIGHSMITH PATRICIA\", \"Patricia highsmith\", \"Highsmith Patricia\"], \"match_score\": 16}, {\"eid\": \"OL:AUTHOR:OL16705475A\", \"url\": \"https://openlibrary.org/authors/OL16705475A\", \"author_id\": \"OL16705475A\", \"source\": \"Open Library Authors API\", \"name\": \"Patricia Highsmith\", \"born\": null, \"died\": null, \"alternate_names\": [], \"match_score\": 10}], \"note\": \"Multiple author authority records can share a name. Do not merge candidates or treat dates from one candidate as proven for another. Verify identity using aliases, titles or other records. This API does not establish nationality, citizenship, or first-publication country.\", \"status\": \"success\", \"coverage_note\": \"Search results reflect this source and query only; absence is not proof of nonexistence.\", \"error\": null}"
+      },
+      {
+        "agent": "Researcher 1",
+        "name": "search_renewals",
+        "arguments": {
+          "author": "Morgan",
+          "title": "Price of Salt"
+        },
+        "output": "{\"source\": \"NYPL CCE renewals (Catalog of Copyright Entries 1950-1977 + Copyright Office database 1978+)\", \"query\": {\"title\": \"Price of Salt\", \"author\": \"Morgan\"}, \"candidates_scanned\": 0, \"scan_truncated\": false, \"retrieval_note\": \"All matches to the applied SQL filters were considered.\", \"results\": [], \"coverage_note\": \"No search hit does NOT prove non-renewal. Coverage gaps, transcription errors, title variants, and unmatched dates require additional investigation.\"}"
+      },
+      {
+        "agent": "Researcher 1",
+        "name": "search_registrations",
+        "arguments": {
+          "title": "Carol",
+          "year_from": 1951,
+          "year_to": 1953,
+          "author": "Highsmith"
+        },
+        "output": "{\"source\": \"NYPL Catalog of Copyright Entries, registrations (book volumes 1923-1969)\", \"query\": {\"title\": \"Carol\", \"author\": \"Highsmith\", \"year_from\": 1951, \"year_to\": 1953}, \"candidates_scanned\": 29, \"scan_truncated\": false, \"retrieval_note\": \"All matches to the applied SQL filters were considered.\", \"results\": [{\"regnum\": \"A107677\", \"regdate\": \"1953-08-18\", \"authors\": null, \"title\": \"Carolyna. Sheet.\", \"publisher\": \"Bill James Keller\", \"pubdate\": null, \"source_file\": \"data/nypl_registrations/xml/1953/1953_v7_n2.xml\", \"entry_id\": \"BB7A4BF9-6F17-1014-9F0D-96810182DD4A\", \"renewal_id\": null, \"renewal_date\": null, \"renewal_claimants\": null, \"match_status\": \"no_exact_key_match\", \"match_score\": 55, \"eid\": \"REG:BB7A4BF9-6F17-1014-9F0D-96810182DD4A\", \"class\": \"A: book published in the U.S.\"}, {\"regnum\": \"AFO12542\", \"regdate\": \"1953-10-08\", \"authors\": null, \"title\": \"Une fête chez Caroline.\", \"publisher\": \"Librairie Hachette\", \"pubdate\": null, \"source_file\": \"data/nypl_registrations/xml/1953/1953_v7_n2.xml\", \"entry_id\": \"C8EBA10E-6F17-1014-9F0D-96810182DD4A\", \"renewal_id\": \"RE91237\", \"renewal_date\": \"1981-04-30\", \"renewal_claimants\": \"Pierre Probst|A\", \"match_status\": \"exact_key_candidate\", \"match_score\": 44, \"eid\": \"REG:C8EBA10E-6F17-1014-9F0D-96810182DD4A\", \"class\": \"AF: ad interim / foreign-language or foreign-published book\", \"renewal_eid\": \"REN:RE91237\"}, {\"regnum\": \"A118288\", \"regdate\": \"1953-11-30\", \"authors\": null, \"title\": \"WEST’S SOUTH CAROLINA DIGEST.\", \"publisher\": \"West Pub. Co.\", \"pubdate\": null, \"source_file\": \"data/nypl_registrations/xml/1953/1953_v7_n2.xml\", \"entry_id\": \"CDF756FB-6F17-1014-9F0D-96810182DD4A\", \"renewal_id\": null, \"renewal_date\": null, \"renewal_claimants\": null, \"match_status\": \"no_exact_key_match\", \"match_score\": 40, \"eid\": \"REG:CDF756FB-6F17-1014-9F0D-96810182DD4A\", \"class\": \"A: book published in the U.S.\"}, {\"regnum\": \"A52728\", \"regdate\": \"1951-01-10\", \"authors\": null, \"title\": \"NORTH CAROLINA. LAWS, STATUTES, ETC.\", \"publisher\": \"The Mic..."
+      },
+      {
+        "agent": "Researcher 1",
+        "name": "search_registrations",
+        "arguments": {
+          "author": "Patricia Highsmith",
+          "year_to": 1960,
+          "year_from": 1950,
+          "title": "Carol"
+        },
+        "output": "{\"source\": \"NYPL Catalog of Copyright Entries, registrations (book volumes 1923-1969)\", \"query\": {\"title\": \"Carol\", \"author\": \"Patricia Highsmith\", \"year_from\": 1950, \"year_to\": 1960}, \"candidates_scanned\": 306, \"scan_truncated\": false, \"retrieval_note\": \"All matches to the applied SQL filters were considered.\", \"results\": [{\"regnum\": \"A230933\", \"regdate\": \"1956-04-03\", \"authors\": null, \"title\": \"Carol.\", \"publisher\": \"Shell Oil Co.\", \"pubdate\": null, \"source_file\": \"data/nypl_registrations/xml/1956/1956_v10_n1.xml\", \"entry_id\": \"93B3B047-6D95-1014-B434-EB8C4702B141\", \"renewal_id\": null, \"renewal_date\": null, \"renewal_claimants\": null, \"match_status\": \"no_exact_key_match\", \"match_score\": 108, \"eid\": \"REG:93B3B047-6D95-1014-B434-EB8C4702B141\", \"class\": \"A: book published in the U.S.\"}, {\"regnum\": \"A392653\", \"regdate\": \"1959-05-26\", \"authors\": null, \"title\": \"Carol Lane awards for traffic safety\", \"publisher\": \"Shell Oil Co.\", \"pubdate\": null, \"source_file\": \"data/nypl_registrations/xml/1959/1959_v13_n1.xml\", \"entry_id\": \"27624B82-6F26-1014-8881-C801964016F5\", \"renewal_id\": null, \"renewal_date\": null, \"renewal_claimants\": null, \"match_status\": \"no_exact_key_match\", \"match_score\": 93, \"eid\": \"REG:27624B82-6F26-1014-8881-C801964016F5\", \"class\": \"A: book published in the U.S.\"}, {\"regnum\": \"A476752\", \"regdate\": \"1960-11-01\", \"authors\": null, \"title\": \"Carol Lane awards for traffic safety.\", \"publisher\": \"National Safety Council\", \"pubdate\": null, \"source_file\": \"data/nypl_registrations/xml/1960/1960_v14_n2.xml\", \"entry_id\": \"A0479844-6C6D-1014-965B-8464748AEC84\", \"renewal_id\": null, \"renewal_date\": null, \"renewal_claimants\": null, \"match_status\": \"no_exact_key_match\", \"match_score\": 93, \"eid\": \"REG:A0479844-6C6D-1014-965B-8464748AEC84\", \"class\": \"A: book published in the U.S.\"}, {\"regnum\": \"A478530\", \"regdate\": \"1960-11-17\", \"authors\": null, \"title\": \"Carol Lynley; stand-up doll with 28 costumes and accessories.\", \"publisher\": \"Whitman Pub. Co.\", \"pubdate\": null, \"source..."
+      },
+      {
+        "agent": "Researcher 1",
+        "name": "verify_record_link",
+        "arguments": {
+          "registration_entry_id": "795B643A-6E97-1014-9357-E9A0C844EAF1"
+        },
+        "output": "{\"status\": \"no_exact_key_match\", \"registration\": {\"eid\": \"REG:795B643A-6E97-1014-9357-E9A0C844EAF1\", \"entry_id\": \"795B643A-6E97-1014-9357-E9A0C844EAF1\", \"regnum\": \"A68131\", \"regdate\": \"1952-04-15\", \"title\": \"The price of salt\", \"authors\": \"HIGHSMITH, PATRICIA; Claire Morgan\", \"source_file\": \"data/nypl_registrations/xml/1952/cc361libr_443-690.xml\", \"source_url\": \"https://archive.org/stream/catalogofcopyri361libr\", \"match_status\": \"no_exact_key_match\"}, \"candidates\": [], \"truncated\": false, \"reason\": \"Composite registration number and original date are compared exactly. Title, author, edition, first publication, and applicability of copyright rules still require independent verification. No match is not proof of nonrenewal.\"}"
+      },
+      {
+        "agent": "Researcher 1",
+        "name": "check_us_status",
+        "arguments": {
+          "author_death_year": null,
+          "published_in_us": true,
+          "renewal_year": null,
+          "pub_year": 1952,
+          "had_notice": true,
+          "renewed": false
+        },
+        "output": "{\"eid\": \"RULE:1952-us-False\", \"verdict\": \"undetermined\", \"confidence\": \"low\", \"reasoning\": [\"As of 2026-11-18, works published in 1930 or earlier are in the U.S. public domain (95-year maximum term ended).\", \"A search did not identify a renewal; this is not proof of non-renewal. An independent, sufficiently complete investigation of original records and applicable legal formalities is required before declaring public domain.\", \"Always caveats: a later edition's new text, illustrations, translations or forewords can be separately protected; unpublished works follow different rules.\"], \"public_domain_from\": null, \"source\": \"U.S. Copyright Office Circular 15A (Duration) and Circular 22 (How to Investigate the Copyright Status of a Work), https://www.copyright.gov/circs/circ22.pdf\"}"
+      },
+      {
+        "agent": "GapReview",
+        "name": "review_research_gaps",
+        "arguments": {
+          "round": 1
+        },
+        "output": "{\"round\": 1, \"max_rounds\": 2, \"additional_round_permitted\": true, \"issues\": [{\"code\": \"bounded_external_search\", \"severity\": \"note\", \"reason\": \"gutenberg_search returned no matching records in this query\", \"suggested_action\": \"Only report no hits in this gutenberg_search search; do not conclude no copies or records exist\"}, {\"code\": \"uninspectable_tool_output\", \"severity\": \"review\", \"reason\": \"search_registrations did not return complete structured JSON in the trace\", \"suggested_action\": \"Inspect the search_registrations result and do not use it as evidence of absence\"}, {\"code\": \"renewal_unresolved\", \"severity\": \"review\", \"reason\": \"At least one registration lacks an exact renewal link; no verified renewal was observed\", \"suggested_action\": \"Search renewal titles, author/claimant variants, pseudonyms and original registration numbers; state unresolved if no verified link emerges\"}, {\"code\": \"renewal_search_bounded\", \"severity\": \"note\", \"reason\": \"Direct renewal search returned no hits\", \"suggested_action\": \"Try meaningful title/author variants when relevant and preserve nonrenewal uncertainty\"}], \"actionable_issue_count\": 2, \"policy\": \"Only dispatch a follow-up if it could materially change the answer. Do not dispatch solely to fix an unrelated external API failure. If no more rounds are available, disclose unresolved gaps. This review is NOT a copyright verdict.\"}"
+      },
+      {
+        "agent": "Lead",
+        "name": "dispatch_researchers",
+        "arguments": {
+          "tasks": [
+            "Search US copyright registrations and renewals for 'The Price of Salt' and its alternative title 'Carol' by Claire Morgan or Patricia Highsmith. Search registrations for 1951-1953 and renewals for 1979-1981. Run check_us_status.",
+            "Search Open Library for bibliographic details of 'The Price of Salt' by Claire Morgan / Patricia Highsmith published in 1952, including OCLC, LCCN, alternate titles, and author vital dates.",
+            "Search HathiTrust and Project Gutenberg for 'The Price of Salt' or 'Carol' by Claire Morgan/Patricia Highsmith to find rights status codes and online availability."
+          ]
+        },
+        "output": "## Researcher 1 (round 1)\nTask: Search US copyright registrations and renewals for 'The Price of Salt' and its alternative title 'Carol' by Claire Morgan or Patricia Highsmith. Search registrations for 1951-1953 and renewals for 1979-1981. Run check_us_status.\n- Registered 15 Apr 1952 as A68131 for \"The price of salt\" by HIGHSMITH, PATRICIA; Claire Morgan [REG:795B643A-6E97-1014-9357-E9A0C844EAF1]\n- No renewal matching registration A68131 found in the 1979-1981 renewal period or broader CCE renewal database [verify_record_link:no_exact_key_match]\n- U.S. copyright status is undetermined pending further renewal checks for 1979-1981 and verification of notices [RULE:1952-us-False]\n\nGaps: Could not locate a specific renewal record for registration A68131 in the 1979-1981 window, nor any registration under the alternative title \"Carol\" associated with Patricia Highsmith or Claire Morgan in 1951-1953.\n\n## Researcher 2 (round 1)\nTask: Search Open Library for bibliographic details of 'The Price of Salt' by Claire Morgan / Patricia Highsmith published in 1952, including OCLC, LCCN, alternate titles, and author vital dates.\n- First publication year for 'The Price of Salt' is recorded as 1952 [OL:OL59448W].\n- OCLC numbers include 1099544581, 929572230, 950885993, 32734256, and 22860658 [OL:OL59448W].\n- LCCN numbers include 2019019413, 52008026, 75012340, 94121362, and 90023482 [OL:OL59448W].\n- Author Patricia Highsmith (also writing under the pseudonym Claire Morgan) has vital dates born 19 Jan 1921 and died 4 Feb 1995 [OL:AUTHOR:OL28577A].\nGaps: Specific alternative titles for this work were not listed in the basic Open Library work summary search results.\n\n## Researcher 3 (round 1)\nTask: Search HathiTrust and Project Gutenberg for 'The Price of Salt' or 'Carol' by Claire Morgan/Patricia Highsmith to find rights status codes and online availability.\n\n\n(Round 1 of 2.)\n\n## Evidence-gap review (automated, not a legal conclusion)\n{\"round\": 1, \"max_rounds\": 2, \"additional_round_pe..."
+      },
+      {
+        "agent": "Researcher 4",
+        "name": "query_records",
+        "arguments": {
+          "sql": "SELECT * FROM reg_status WHERE regnum = 'A68131' OR title_norm LIKE '%price of salt%' OR title_norm LIKE '%carol%' OR authors_norm LIKE '%highsmith%'"
+        },
+        "output": "{\"eid\": \"SQL:3b2f5392\", \"sql\": \"SELECT * FROM reg_status WHERE regnum = 'A68131' OR title_norm LIKE '%price of salt%' OR title_norm LIKE '%carol%' OR authors_norm LIKE '%highsmith%'\", \"columns\": [\"entry_id\", \"source_file\", \"source_url\", \"regnum\", \"regdate\", \"reg_year\", \"catalog_year\", \"authors\", \"title\", \"publisher\", \"pubdate\", \"title_norm\", \"authors_norm\", \"renewal_id\", \"renewal_date\", \"renewal_claimants\", \"match_status\"], \"rows\": [[\"063C3737-6D7D-1014-B4A5-D7A31D17AB40\", \"data/nypl_registrations/xml/1932/1932_v29.xml\", \"https://archive.org/details/catalogofcopyrig291libr\", \"A50458\", \"1932-01-28\", 1932, 1932, \"Jacobs, William P.; Wm. P. Jacobs\", \"Problems of the cotton manufacturer in South Carolina\", \"Jacobs & co. press\", null, \"problems of the cotton manufacturer in south carolina\", \"jacobs william p wm p jacobs\", null, null, null, \"no_exact_key_match\"], [\"08A03A68-6D7D-1014-B4A5-D7A31D17AB40\", \"data/nypl_registrations/xml/1932/1932_v29.xml\", \"https://archive.org/details/catalogofcopyrig291libr\", \"A49619\", \"1932-04-16\", 1932, 1932, \"Betters, Paul Vernon; A. T. Allen; Paul V. Betters; Charles M. Johnson; Fred W. Morrison; Charles Ross; Paul V. Betters\", \"… State centralization in North Carolina\", \"The Brookings institution\", null, \"state centralization in north carolina\", \"betters paul vernon a t allen paul v betters charles m johnson fred w morrison charles ross paul v betters\", null, null, null, \"no_exact_key_match\"], [\"08CB92AD-6D7D-1014-B4A5-D7A31D17AB40\", \"data/nypl_registrations/xml/1932/1932_v29.xml\", \"https://archive.org/details/catalogofcopyrig291libr\", \"AF16325\", \"1932-02-11\", 1932, 1932, \"Wells, Thomas Tileston\", \"… Les Huger de la Caroline du Sud; La Fayette à Olmütz.\", \"E. Nourry\", null, \"les huger de la caroline du sud la fayette a olmutz\", \"wells thomas tileston\", null, null, null, \"no_exact_key_match\"], [\"08F37FFD-6D7D-1014-B4A5-D7A31D17AB40\", \"data/nypl_registrations/xml/1932/1932_v29.xml\", \"https://archive.org/details/catalogofcopyrig291libr\", \"A..."
+      },
+      {
+        "agent": "Researcher 5",
+        "name": "hathitrust_lookup",
+        "arguments": {
+          "oclc": "32734256",
+          "lccn": "52-8026"
+        },
+        "output": "{\"source\": \"HathiTrust Bibliographic API\", \"query\": {\"oclc\": \"32734256\"}, \"records\": [], \"items\": [], \"note\": \"rights_code pd/pdus with Full view means HathiTrust (often after manual CRMS review) treats the volume as public domain in the U.S.; ic/und means in copyright or not yet reviewed, not proof of renewal.\", \"status\": \"no_results\", \"coverage_note\": \"Search results reflect this source and query only; absence is not proof of nonexistence.\", \"error\": null}"
+      },
+      {
+        "agent": "Researcher 4",
+        "name": "search_registrations",
+        "arguments": {
+          "year_from": 1950,
+          "year_to": 1955,
+          "author": "Highsmith",
+          "title": "Price of Salt"
+        },
+        "output": "{\"source\": \"NYPL Catalog of Copyright Entries, registrations (book volumes 1923-1969)\", \"query\": {\"title\": \"Price of Salt\", \"author\": \"Highsmith\", \"year_from\": 1950, \"year_to\": 1955}, \"candidates_scanned\": 1, \"scan_truncated\": false, \"retrieval_note\": \"All matches to the applied SQL filters were considered.\", \"results\": [{\"regnum\": \"A68131\", \"regdate\": \"1952-04-15\", \"authors\": \"HIGHSMITH, PATRICIA; Claire Morgan\", \"title\": \"The price of salt\", \"publisher\": \"Coward-McCann\", \"pubdate\": null, \"source_file\": \"data/nypl_registrations/xml/1952/cc361libr_443-690.xml\", \"entry_id\": \"795B643A-6E97-1014-9357-E9A0C844EAF1\", \"renewal_id\": null, \"renewal_date\": null, \"renewal_claimants\": null, \"match_status\": \"no_exact_key_match\", \"match_score\": 100, \"eid\": \"REG:795B643A-6E97-1014-9357-E9A0C844EAF1\", \"class\": \"A: book published in the U.S.\"}], \"coverage_note\": \"NYPL catalog transcription is not a complete inventory of every publication. A missing registration is not proof that the work was never registered.\"}"
+      },
+      {
+        "agent": "Researcher 5",
+        "name": "hathitrust_lookup",
+        "arguments": {
+          "lccn": "52-8026",
+          "oclc": "22860658"
+        },
+        "output": "{\"source\": \"HathiTrust Bibliographic API\", \"query\": {\"oclc\": \"22860658\"}, \"records\": [], \"items\": [], \"note\": \"rights_code pd/pdus with Full view means HathiTrust (often after manual CRMS review) treats the volume as public domain in the U.S.; ic/und means in copyright or not yet reviewed, not proof of renewal.\", \"status\": \"no_results\", \"coverage_note\": \"Search results reflect this source and query only; absence is not proof of nonexistence.\", \"error\": null}"
+      },
+      {
+        "agent": "Researcher 4",
+        "name": "search_renewals",
+        "arguments": {
+          "title": "Price of Salt",
+          "author": "Highsmith"
+        },
+        "output": "{\"source\": \"NYPL CCE renewals (Catalog of Copyright Entries 1950-1977 + Copyright Office database 1978+)\", \"query\": {\"title\": \"Price of Salt\", \"author\": \"Highsmith\"}, \"candidates_scanned\": 0, \"scan_truncated\": false, \"retrieval_note\": \"All matches to the applied SQL filters were considered.\", \"results\": [], \"coverage_note\": \"No search hit does NOT prove non-renewal. Coverage gaps, transcription errors, title variants, and unmatched dates require additional investigation.\"}"
+      },
+      {
+        "agent": "Researcher 4",
+        "name": "query_records",
+        "arguments": {
+          "sql": "SELECT * FROM renewals WHERE rdat >= '1979-01-01' AND rdat <= '1981-12-31' AND (title_norm LIKE '%price of salt%' OR title_norm LIKE '%carol%' OR author_norm LIKE '%highsmith%')"
+        },
+        "output": "{\"eid\": \"SQL:b9742497\", \"sql\": \"SELECT * FROM renewals WHERE rdat >= '1979-01-01' AND rdat <= '1981-12-31' AND (title_norm LIKE '%price of salt%' OR title_norm LIKE '%carol%' OR author_norm LIKE '%highsmith%')\", \"columns\": [\"entry_id\", \"id\", \"rdat\", \"oreg\", \"odat\", \"author\", \"title\", \"claimants\", \"new_matter\", \"notes\", \"source_file\", \"title_norm\", \"author_norm\"], \"rows\": [[\"eea70ac8-d9ed-b3bb-b717-6083a2604658\", \"RE41035\", \"1979-12-13\", \"B280514\", \"1951-01-02\", null, \"Merchants' carol. Music arr. Stanley E. Saxton.|The Quarterly anthem folio, Jan. 1951\", \"Lorenz Publishing Company|PWH\", null, null, \"data/nypl_renewals/data/1979-from-db.tsv\", \"merchants carol music arr stanley e saxton the quarterly anthem folio jan 1951\", \"\"], [\"b4bf14c3-36cf-e017-ef24-8f3d576dfd5a\", \"RE59826\", \"1979-12-07\", \"A52081\", \"1951-01-11\", null, \"The Clue of the black keys. Author of text: Carolyn Keene, pseud., author of text & ill.: Grosset & Dunlap, Inc., employer for hire.\", \"Grosset & Dunlap, Inc.|PWH\", null, null, \"data/nypl_renewals/data/1979-from-db.tsv\", \"the clue of the black keys author of text carolyn keene pseud author of text ill grosset dunlap inc employer for hire\", \"\"], [\"031e5da2-9abd-e227-2f2f-335ff5005661\", \"RE23323\", \"1979-05-01\", \"A51722\", \"1951-01-21\", \"Walter Karig.\", \"Caroline Hicks.\", \"Eleanor Karig|W\", null, null, \"data/nypl_renewals/data/1979-from-db.tsv\", \"caroline hicks\", \"walter karig\"], [\"2f54e981-75c5-8aa9-4291-bca104234ca0\", \"RE26953\", \"1979-04-19\", \"A53476\", \"1951-03-13\", \"James Harold Easterby.\", \"The Colonial records of South Carolina: the journal of the Commons House of Assembly, November 10, 1736-June 7, 1739.\", \"South Carolina Department of Archives and History|PWH\", null, null, \"data/nypl_renewals/data/1979-from-db.tsv\", \"the colonial records of south carolina the journal of the commons house of assembly november 10 1736 june 7 1739\", \"james harold easterby\"], [\"fd46c873-d847-f9d2-9e47-3484ca770ec5\", \"RE59899\", \"1979-12-27\", \"AA179651\", \"1951-04-02\",..."
+      },
+      {
+        "agent": "Researcher 4",
+        "name": "check_us_status",
+        "arguments": {
+          "author_death_year": null,
+          "pub_year": 1952,
+          "renewed": false,
+          "published_in_us": true,
+          "renewal_year": null,
+          "had_notice": true
+        },
+        "output": "{\"eid\": \"RULE:1952-us-False\", \"verdict\": \"undetermined\", \"confidence\": \"low\", \"reasoning\": [\"As of 2026-11-18, works published in 1930 or earlier are in the U.S. public domain (95-year maximum term ended).\", \"A search did not identify a renewal; this is not proof of non-renewal. An independent, sufficiently complete investigation of original records and applicable legal formalities is required before declaring public domain.\", \"Always caveats: a later edition's new text, illustrations, translations or forewords can be separately protected; unpublished works follow different rules.\"], \"public_domain_from\": null, \"source\": \"U.S. Copyright Office Circular 15A (Duration) and Circular 22 (How to Investigate the Copyright Status of a Work), https://www.copyright.gov/circs/circ22.pdf\"}"
+      },
+      {
+        "agent": "GapReview",
+        "name": "review_research_gaps",
+        "arguments": {
+          "round": 2
+        },
+        "output": "{\"round\": 2, \"max_rounds\": 2, \"additional_round_permitted\": false, \"issues\": [{\"code\": \"uninspectable_tool_output\", \"severity\": \"review\", \"reason\": \"query_records did not return complete structured JSON in the trace\", \"suggested_action\": \"Inspect the query_records result and do not use it as evidence of absence\"}, {\"code\": \"bounded_external_search\", \"severity\": \"note\", \"reason\": \"hathitrust_lookup returned no matching records in this query\", \"suggested_action\": \"Only report no hits in this hathitrust_lookup search; do not conclude no copies or records exist\"}, {\"code\": \"renewal_unresolved\", \"severity\": \"review\", \"reason\": \"At least one registration lacks an exact renewal link; no verified renewal was observed\", \"suggested_action\": \"Search renewal titles, author/claimant variants, pseudonyms and original registration numbers; state unresolved if no verified link emerges\"}, {\"code\": \"renewal_search_bounded\", \"severity\": \"note\", \"reason\": \"Direct renewal search returned no hits\", \"suggested_action\": \"Try meaningful title/author variants when relevant and preserve nonrenewal uncertainty\"}], \"actionable_issue_count\": 2, \"policy\": \"Only dispatch a follow-up if it could materially change the answer. Do not dispatch solely to fix an unrelated external API failure. If no more rounds are available, disclose unresolved gaps. This review is NOT a copyright verdict.\"}"
+      },
+      {
+        "agent": "Lead",
+        "name": "dispatch_researchers",
+        "arguments": {
+          "tasks": [
+            "Query renewals database for registration 'A68131', author 'Highsmith' or 'Morgan', and titles 'The Price of Salt' or 'Carol'. Search for any renewal records from 1979 to 1981, and run check_us_status.",
+            "Query HathiTrust catalog via hathitrust_lookup for LCCN 52-8026 and OCLC 32734256 or 22860658 to determine the copyright status / rights code of 'The Price of Salt'."
+          ]
+        },
+        "output": "## Researcher 4 (round 2)\nTask: Query renewals database for registration 'A68131', author 'Highsmith' or 'Morgan', and titles 'The Price of Salt' or 'Carol'. Search for any renewal records from 1979 to 1981, and run check_us_status.\n- Registered 15 Apr 1952 as A68131 for \"The price of salt\" by Patricia Highsmith and Claire Morgan [REG:795B643A-6E97-1014-9357-E9A0C844EAF1].\n- No renewal record matching the registration number A68131 or authors Highsmith / Morgan was found in the renewals database for 1979 to 1981.\n- U.S. copyright status is undetermined (no renewal match found, but non-renewal requires complete investigation of original records) [RULE:1952-us-False].\n\nGaps: Could not locate a renewal record for registration A68131 in the database spanning 1979–1981.\n\n## Researcher 5 (round 2)\nTask: Query HathiTrust catalog via hathitrust_lookup for LCCN 52-8026 and OCLC 32734256 or 22860658 to determine the copyright status / rights code of 'The Price of Salt'.\n- HathiTrust catalog query for LCCN 52-8026 and OCLC 32734256 returned no items.\n- HathiTrust catalog query for LCCN 52-8026 and OCLC 22860658 returned no items.\n- Rights code and copyright status for 'The Price of Salt' could not be determined from HathiTrust for these identifiers.\n\nGaps: HathiTrust lookup returned no results for the specified LCCN and OCLC numbers.\n\n(Round 2 of 2.)\n\n## Evidence-gap review (automated, not a legal conclusion)\n{\"round\": 2, \"max_rounds\": 2, \"additional_round_permitted\": false, \"issues\": [{\"code\": \"uninspectable_tool_output\", \"severity\": \"review\", \"reason\": \"query_records did not return complete structured JSON in the trace\", \"suggested_action\": \"Inspect the query_records result and do not use it as evidence of absence\"}, {\"code\": \"bounded_external_search\", \"severity\": \"note\", \"reason\": \"hathitrust_lookup returned no matching records in this query\", \"suggested_action\": \"Only report no hits in this hathitrust_lookup search; do not conclude no copies or records exist\"}, {\"code\": \"r..."
+      },
+      {
+        "agent": "CitationCheck",
+        "name": "check_citations",
+        "arguments": {
+          "round": 1
+        },
+        "output": "PASS"
+      }
+    ],
+    "rounds": 2,
+    "researchers": 5,
+    "evidence": [
+      {
+        "id": "REG:795B643A-6E97-1014-9357-E9A0C844EAF1",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A68131; regdate=1952-04-15; authors=HIGHSMITH, PATRICIA; Claire Morgan; title=The price of salt; publisher=Coward-McCann; source_file=data/nypl_registrations/xml/1952/cc361libr_443-690.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A68131",
+          "regdate": "1952-04-15",
+          "authors": "HIGHSMITH, PATRICIA; Claire Morgan",
+          "title": "The price of salt",
+          "publisher": "Coward-McCann",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1952/cc361libr_443-690.xml",
+          "entry_id": "795B643A-6E97-1014-9357-E9A0C844EAF1",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 100,
+          "eid": "REG:795B643A-6E97-1014-9357-E9A0C844EAF1",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "OL:OL59448W",
+        "tool": "openlibrary_search",
+        "url": "https://openlibrary.org/works/OL59448W",
+        "summary": "title=The Price of Salt; authors=['Patricia Highsmith']; first_publish_year=1952; edition_count=72; publishers=['W.W. Norton', 'Columna CAT', 'Calmann-Lévy', 'Naiad Press', 'Bantam Books', 'Churchill & Dunn, Ltd']; publish_places=['London', 'Milano', 'New York', 'Tallahassee, Fla', 'London, UK', 'United States']; languages=['spa', 'ita', 'ger', 'eng', 'chi']; oclc=['1099544581', '929572230', '950885993', '32734256', '22860658']; lccn=['2019019413', '52008026', '75012340', '94121362', '90023482']; ebook_access=borrowable",
+        "record_type": "OL",
+        "record": {
+          "eid": "OL:OL59448W",
+          "url": "https://openlibrary.org/works/OL59448W",
+          "title": "The Price of Salt",
+          "authors": [
+            "Patricia Highsmith"
+          ],
+          "first_publish_year": 1952,
+          "edition_count": 72,
+          "publishers": [
+            "W.W. Norton",
+            "Columna CAT",
+            "Calmann-Lévy",
+            "Naiad Press",
+            "Bantam Books",
+            "Churchill & Dunn, Ltd"
+          ],
+          "publish_places": [
+            "London",
+            "Milano",
+            "New York",
+            "Tallahassee, Fla",
+            "London, UK",
+            "United States"
+          ],
+          "languages": [
+            "spa",
+            "ita",
+            "ger",
+            "eng",
+            "chi"
+          ],
+          "oclc": [
+            "1099544581",
+            "929572230",
+            "950885993",
+            "32734256",
+            "22860658"
+          ],
+          "lccn": [
+            "2019019413",
+            "52008026",
+            "75012340",
+            "94121362",
+            "90023482"
+          ],
+          "ebook_access": "borrowable"
+        },
+        "source": "Open Library"
+      },
+      {
+        "id": "OL:AUTHOR:OL11888307A",
+        "tool": "openlibrary_author",
+        "url": "https://openlibrary.org/authors/OL11888307A",
+        "summary": "author_id=OL11888307A; name=Claire Morgan; born=1980",
+        "record_type": "OL",
+        "record": {
+          "eid": "OL:AUTHOR:OL11888307A",
+          "url": "https://openlibrary.org/authors/OL11888307A",
+          "author_id": "OL11888307A",
+          "source": "Open Library Authors API",
+          "name": "Claire Morgan",
+          "born": "1980",
+          "died": null,
+          "alternate_names": [],
+          "match_score": 11
+        },
+        "source": "Open Library Authors API"
+      },
+      {
+        "id": "OL:AUTHOR:OL12093001A",
+        "tool": "openlibrary_author",
+        "url": "https://openlibrary.org/authors/OL12093001A",
+        "summary": "author_id=OL12093001A; name=Claire Morgan",
+        "record_type": "OL",
+        "record": {
+          "eid": "OL:AUTHOR:OL12093001A",
+          "url": "https://openlibrary.org/authors/OL12093001A",
+          "author_id": "OL12093001A",
+          "source": "Open Library Authors API",
+          "name": "Claire Morgan",
+          "born": null,
+          "died": null,
+          "alternate_names": [],
+          "match_score": 10
+        },
+        "source": "Open Library Authors API"
+      },
+      {
+        "id": "OL:AUTHOR:OL12093218A",
+        "tool": "openlibrary_author",
+        "url": "https://openlibrary.org/authors/OL12093218A",
+        "summary": "author_id=OL12093218A; name=Claire Morgan",
+        "record_type": "OL",
+        "record": {
+          "eid": "OL:AUTHOR:OL12093218A",
+          "url": "https://openlibrary.org/authors/OL12093218A",
+          "author_id": "OL12093218A",
+          "source": "Open Library Authors API",
+          "name": "Claire Morgan",
+          "born": null,
+          "died": null,
+          "alternate_names": [],
+          "match_score": 10
+        },
+        "source": "Open Library Authors API"
+      },
+      {
+        "id": "OL:AUTHOR:OL28577A",
+        "tool": "openlibrary_author",
+        "url": "https://openlibrary.org/authors/OL28577A",
+        "summary": "author_id=OL28577A; name=Patricia Highsmith; born=19 Jan 1921; died=4 Feb 1995; alternate_names=['Claire Morgan', 'Kevin Hinkle', 'PATRICIA HIGHSMITH', 'HIGHSMITH PATRICIA', 'Patricia highsmith', 'Highsmith Patricia']",
+        "record_type": "OL",
+        "record": {
+          "eid": "OL:AUTHOR:OL28577A",
+          "url": "https://openlibrary.org/authors/OL28577A",
+          "author_id": "OL28577A",
+          "source": "Open Library Authors API",
+          "name": "Patricia Highsmith",
+          "born": "19 Jan 1921",
+          "died": "4 Feb 1995",
+          "alternate_names": [
+            "Claire Morgan",
+            "Kevin Hinkle",
+            "PATRICIA HIGHSMITH",
+            "HIGHSMITH PATRICIA",
+            "Patricia highsmith",
+            "Highsmith Patricia"
+          ],
+          "match_score": 6
+        },
+        "source": "Open Library Authors API"
+      },
+      {
+        "id": "OL:AUTHOR:OL4942690A",
+        "tool": "openlibrary_author",
+        "url": "https://openlibrary.org/authors/OL4942690A",
+        "summary": "author_id=OL4942690A; name=Caroline Claire Morgan",
+        "record_type": "OL",
+        "record": {
+          "eid": "OL:AUTHOR:OL4942690A",
+          "url": "https://openlibrary.org/authors/OL4942690A",
+          "author_id": "OL4942690A",
+          "source": "Open Library Authors API",
+          "name": "Caroline Claire Morgan",
+          "born": null,
+          "died": null,
+          "alternate_names": [],
+          "match_score": 0
+        },
+        "source": "Open Library Authors API"
+      },
+      {
+        "id": "OL:AUTHOR:OL16705475A",
+        "tool": "openlibrary_author",
+        "url": "https://openlibrary.org/authors/OL16705475A",
+        "summary": "author_id=OL16705475A; name=Patricia Highsmith",
+        "record_type": "OL",
+        "record": {
+          "eid": "OL:AUTHOR:OL16705475A",
+          "url": "https://openlibrary.org/authors/OL16705475A",
+          "author_id": "OL16705475A",
+          "source": "Open Library Authors API",
+          "name": "Patricia Highsmith",
+          "born": null,
+          "died": null,
+          "alternate_names": [],
+          "match_score": 10
+        },
+        "source": "Open Library Authors API"
+      },
+      {
+        "id": "REG:BB7A4BF9-6F17-1014-9F0D-96810182DD4A",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A107677; regdate=1953-08-18; title=Carolyna. Sheet.; publisher=Bill James Keller; source_file=data/nypl_registrations/xml/1953/1953_v7_n2.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A107677",
+          "regdate": "1953-08-18",
+          "authors": null,
+          "title": "Carolyna. Sheet.",
+          "publisher": "Bill James Keller",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1953/1953_v7_n2.xml",
+          "entry_id": "BB7A4BF9-6F17-1014-9F0D-96810182DD4A",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 55,
+          "eid": "REG:BB7A4BF9-6F17-1014-9F0D-96810182DD4A",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:C8EBA10E-6F17-1014-9F0D-96810182DD4A",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=AFO12542; regdate=1953-10-08; title=Une fête chez Caroline.; publisher=Librairie Hachette; source_file=data/nypl_registrations/xml/1953/1953_v7_n2.xml; renewal_id=RE91237; renewal_date=1981-04-30; renewal_claimants=Pierre Probst|A; match_status=exact_key_candidate; class=AF: ad interim / foreign-language or foreign-published book",
+        "record_type": "REG",
+        "record": {
+          "regnum": "AFO12542",
+          "regdate": "1953-10-08",
+          "authors": null,
+          "title": "Une fête chez Caroline.",
+          "publisher": "Librairie Hachette",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1953/1953_v7_n2.xml",
+          "entry_id": "C8EBA10E-6F17-1014-9F0D-96810182DD4A",
+          "renewal_id": "RE91237",
+          "renewal_date": "1981-04-30",
+          "renewal_claimants": "Pierre Probst|A",
+          "match_status": "exact_key_candidate",
+          "match_score": 44,
+          "eid": "REG:C8EBA10E-6F17-1014-9F0D-96810182DD4A",
+          "class": "AF: ad interim / foreign-language or foreign-published book",
+          "renewal_eid": "REN:RE91237"
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REN:RE91237",
+        "tool": "search_registrations",
+        "url": null,
+        "source": "NYPL CCE renewals (github.com/NYPL/cce-renewals)",
+        "record_type": "REN",
+        "record": {
+          "renewal_id": "RE91237",
+          "renewal_date": "1981-04-30",
+          "original_regnum": "AFO12542",
+          "original_regdate": "1953-10-08"
+        },
+        "summary": "Renewal RE91237 filed 1981-04-30 by Pierre Probst|A, for registration AFO12542 of 1953-10-08"
+      },
+      {
+        "id": "REG:CDF756FB-6F17-1014-9F0D-96810182DD4A",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A118288; regdate=1953-11-30; title=WEST’S SOUTH CAROLINA DIGEST.; publisher=West Pub. Co.; source_file=data/nypl_registrations/xml/1953/1953_v7_n2.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A118288",
+          "regdate": "1953-11-30",
+          "authors": null,
+          "title": "WEST’S SOUTH CAROLINA DIGEST.",
+          "publisher": "West Pub. Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1953/1953_v7_n2.xml",
+          "entry_id": "CDF756FB-6F17-1014-9F0D-96810182DD4A",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 40,
+          "eid": "REG:CDF756FB-6F17-1014-9F0D-96810182DD4A",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:27A6757E-6D96-1014-9FA7-88F81FCFA0F7",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A52728; regdate=1951-01-10; title=NORTH CAROLINA. LAWS, STATUTES, ETC.; publisher=The Michie Co.; source_file=data/nypl_registrations/xml/1951/cc351libr_001-241.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A52728",
+          "regdate": "1951-01-10",
+          "authors": null,
+          "title": "NORTH CAROLINA. LAWS, STATUTES, ETC.",
+          "publisher": "The Michie Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1951/cc351libr_001-241.xml",
+          "entry_id": "27A6757E-6D96-1014-9FA7-88F81FCFA0F7",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 37,
+          "eid": "REG:27A6757E-6D96-1014-9FA7-88F81FCFA0F7",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:B1F9027C-6F5B-1014-A2B7-83BFD15252F6",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A121532; regdate=1953-12-01; title=A COLLECTION OF CHRISTMAS CAROLS.; publisher=Kaiser Engineers, division of Henry J. Kaiser Co.; source_file=data/nypl_registrations/xml/1954/1954_v8_n1.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A121532",
+          "regdate": "1953-12-01",
+          "authors": null,
+          "title": "A COLLECTION OF CHRISTMAS CAROLS.",
+          "publisher": "Kaiser Engineers, division of Henry J. Kaiser Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1954/1954_v8_n1.xml",
+          "entry_id": "B1F9027C-6F5B-1014-A2B7-83BFD15252F6",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 37,
+          "eid": "REG:B1F9027C-6F5B-1014-A2B7-83BFD15252F6",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:CDF751CB-6F17-1014-9F0D-96810182DD4A",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A98756; regdate=1953-06-30; title=WEST'S SOUTH CAROLINA DIGEST. June 1953.; publisher=West Pub. Co.; source_file=data/nypl_registrations/xml/1953/1953_v7_n2.xml; renewal_id=RE97218; renewal_date=1981-07-27; renewal_claimants=West Publishing Company|PWH; match_status=exact_key_candidate; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A98756",
+          "regdate": "1953-06-30",
+          "authors": null,
+          "title": "WEST'S SOUTH CAROLINA DIGEST. June 1953.",
+          "publisher": "West Pub. Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1953/1953_v7_n2.xml",
+          "entry_id": "CDF751CB-6F17-1014-9F0D-96810182DD4A",
+          "renewal_id": "RE97218",
+          "renewal_date": "1981-07-27",
+          "renewal_claimants": "West Publishing Company|PWH",
+          "match_status": "exact_key_candidate",
+          "match_score": 34,
+          "eid": "REG:CDF751CB-6F17-1014-9F0D-96810182DD4A",
+          "class": "A: book published in the U.S.",
+          "renewal_eid": "REN:RE97218"
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REN:RE97218",
+        "tool": "search_registrations",
+        "url": null,
+        "source": "NYPL CCE renewals (github.com/NYPL/cce-renewals)",
+        "record_type": "REN",
+        "record": {
+          "renewal_id": "RE97218",
+          "renewal_date": "1981-07-27",
+          "original_regnum": "A98756",
+          "original_regdate": "1953-06-30"
+        },
+        "summary": "Renewal RE97218 filed 1981-07-27 by West Publishing Company|PWH, for registration A98756 of 1953-06-30"
+      },
+      {
+        "id": "REG:B2943DC0-6F5B-1014-A2B7-83BFD15252F6",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A120166; regdate=1953-12-16; title=South Carolina tax reporter, State and local.; publisher=Commerce Clearing House, inc.; source_file=data/nypl_registrations/xml/1954/1954_v8_n1.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A120166",
+          "regdate": "1953-12-16",
+          "authors": null,
+          "title": "South Carolina tax reporter, State and local.",
+          "publisher": "Commerce Clearing House, inc.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1954/1954_v8_n1.xml",
+          "entry_id": "B2943DC0-6F5B-1014-A2B7-83BFD15252F6",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 33,
+          "eid": "REG:B2943DC0-6F5B-1014-A2B7-83BFD15252F6",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:CD3E12BC-6F17-1014-9F0D-96810182DD4A",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A98857; regdate=1953-06-08; title=Edenton, North Carolina, cradle of the Colony.; publisher=Curt Teich & Co., inc.; source_file=data/nypl_registrations/xml/1953/1953_v7_n2.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A98857",
+          "regdate": "1953-06-08",
+          "authors": null,
+          "title": "Edenton, North Carolina, cradle of the Colony.",
+          "publisher": "Curt Teich & Co., inc.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1953/1953_v7_n2.xml",
+          "entry_id": "CD3E12BC-6F17-1014-9F0D-96810182DD4A",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 33,
+          "eid": "REG:CD3E12BC-6F17-1014-9F0D-96810182DD4A",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:93B3B047-6D95-1014-B434-EB8C4702B141",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A230933; regdate=1956-04-03; title=Carol.; publisher=Shell Oil Co.; source_file=data/nypl_registrations/xml/1956/1956_v10_n1.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A230933",
+          "regdate": "1956-04-03",
+          "authors": null,
+          "title": "Carol.",
+          "publisher": "Shell Oil Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1956/1956_v10_n1.xml",
+          "entry_id": "93B3B047-6D95-1014-B434-EB8C4702B141",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 108,
+          "eid": "REG:93B3B047-6D95-1014-B434-EB8C4702B141",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:27624B82-6F26-1014-8881-C801964016F5",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A392653; regdate=1959-05-26; title=Carol Lane awards for traffic safety; publisher=Shell Oil Co.; source_file=data/nypl_registrations/xml/1959/1959_v13_n1.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A392653",
+          "regdate": "1959-05-26",
+          "authors": null,
+          "title": "Carol Lane awards for traffic safety",
+          "publisher": "Shell Oil Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1959/1959_v13_n1.xml",
+          "entry_id": "27624B82-6F26-1014-8881-C801964016F5",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 93,
+          "eid": "REG:27624B82-6F26-1014-8881-C801964016F5",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:A0479844-6C6D-1014-965B-8464748AEC84",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A476752; regdate=1960-11-01; title=Carol Lane awards for traffic safety.; publisher=National Safety Council; source_file=data/nypl_registrations/xml/1960/1960_v14_n2.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A476752",
+          "regdate": "1960-11-01",
+          "authors": null,
+          "title": "Carol Lane awards for traffic safety.",
+          "publisher": "National Safety Council",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1960/1960_v14_n2.xml",
+          "entry_id": "A0479844-6C6D-1014-965B-8464748AEC84",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 93,
+          "eid": "REG:A0479844-6C6D-1014-965B-8464748AEC84",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:886C0249-6D03-1014-999C-964E71FFACD8",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A478530; regdate=1960-11-17; title=Carol Lynley; stand-up doll with 28 costumes and accessories.; publisher=Whitman Pub. Co.; source_file=data/nypl_registrations/xml/1961/1961_v15_n1.xml; renewal_id=RE402641; renewal_date=1988-11-28; renewal_claimants=Western Publishing Company, Inc.|PWH; match_status=exact_key_candidate; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A478530",
+          "regdate": "1960-11-17",
+          "authors": null,
+          "title": "Carol Lynley; stand-up doll with 28 costumes and accessories.",
+          "publisher": "Whitman Pub. Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1961/1961_v15_n1.xml",
+          "entry_id": "886C0249-6D03-1014-999C-964E71FFACD8",
+          "renewal_id": "RE402641",
+          "renewal_date": "1988-11-28",
+          "renewal_claimants": "Western Publishing Company, Inc.|PWH",
+          "match_status": "exact_key_candidate",
+          "match_score": 93,
+          "eid": "REG:886C0249-6D03-1014-999C-964E71FFACD8",
+          "class": "A: book published in the U.S.",
+          "renewal_eid": "REN:RE402641"
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REN:RE402641",
+        "tool": "search_registrations",
+        "url": null,
+        "source": "NYPL CCE renewals (github.com/NYPL/cce-renewals)",
+        "record_type": "REN",
+        "record": {
+          "renewal_id": "RE402641",
+          "renewal_date": "1988-11-28",
+          "original_regnum": "A478530",
+          "original_regdate": "1960-11-17"
+        },
+        "summary": "Renewal RE402641 filed 1988-11-28 by Western Publishing Company, Inc.|PWH, for registration A478530 of 1960-11-17"
+      },
+      {
+        "id": "REG:C5E068F2-728D-1014-8500-D70EB891A161",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=B529414; regdate=1954-12-10; title=Chrietmas carol.; source_file=data/nypl_registrations/xml/1955/1955_v9_n1.xml; match_status=no_exact_key_match; class=B: periodical contribution / pamphlet",
+        "record_type": "REG",
+        "record": {
+          "regnum": "B529414",
+          "regdate": "1954-12-10",
+          "authors": null,
+          "title": "Chrietmas carol.",
+          "publisher": null,
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1955/1955_v9_n1.xml",
+          "entry_id": "C5E068F2-728D-1014-8500-D70EB891A161",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 88,
+          "eid": "REG:C5E068F2-728D-1014-8500-D70EB891A161",
+          "class": "B: periodical contribution / pamphlet"
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:52250754-72C4-1014-84F6-87703AD4166D",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A348151; regdate=1958-07-22; title=Presenting Carol Lane.; publisher=Shell Oil Co.; source_file=data/nypl_registrations/xml/1958/1958_v12_n2.xml; match_status=no_exact_key_match; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A348151",
+          "regdate": "1958-07-22",
+          "authors": null,
+          "title": "Presenting Carol Lane.",
+          "publisher": "Shell Oil Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1958/1958_v12_n2.xml",
+          "entry_id": "52250754-72C4-1014-84F6-87703AD4166D",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 88,
+          "eid": "REG:52250754-72C4-1014-84F6-87703AD4166D",
+          "class": "A: book published in the U.S."
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:69799FB1-7240-1014-AB88-AD98078397AF",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=BB6880; regdate=1957-11-21; title=Walt Disney's Christmas carol.; publisher=Walt Disney Productions; source_file=data/nypl_registrations/xml/1958/1958_v12_n1.xml; match_status=no_exact_key_match; class=B: periodical contribution / pamphlet",
+        "record_type": "REG",
+        "record": {
+          "regnum": "BB6880",
+          "regdate": "1957-11-21",
+          "authors": null,
+          "title": "Walt Disney's Christmas carol.",
+          "publisher": "Walt Disney Productions",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1958/1958_v12_n1.xml",
+          "entry_id": "69799FB1-7240-1014-AB88-AD98078397AF",
+          "renewal_id": null,
+          "renewal_date": null,
+          "renewal_claimants": null,
+          "match_status": "no_exact_key_match",
+          "match_score": 88,
+          "eid": "REG:69799FB1-7240-1014-AB88-AD98078397AF",
+          "class": "B: periodical contribution / pamphlet"
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REG:2A119037-72C4-1014-84F6-87703AD4166D",
+        "tool": "search_registrations",
+        "url": null,
+        "summary": "regnum=A349039; regdate=1958-02-20; title=Fashions for Carol. Avalon Books.; publisher=Thomas Bouregy & Co.; source_file=data/nypl_registrations/xml/1958/1958_v12_n2.xml; renewal_id=RE298640; renewal_date=1986-07-11; renewal_claimants=Nell Marr Dean|A; match_status=exact_key_candidate; class=A: book published in the U.S.",
+        "record_type": "REG",
+        "record": {
+          "regnum": "A349039",
+          "regdate": "1958-02-20",
+          "authors": null,
+          "title": "Fashions for Carol. Avalon Books.",
+          "publisher": "Thomas Bouregy & Co.",
+          "pubdate": null,
+          "source_file": "data/nypl_registrations/xml/1958/1958_v12_n2.xml",
+          "entry_id": "2A119037-72C4-1014-84F6-87703AD4166D",
+          "renewal_id": "RE298640",
+          "renewal_date": "1986-07-11",
+          "renewal_claimants": "Nell Marr Dean|A",
+          "match_status": "exact_key_candidate",
+          "match_score": 88,
+          "eid": "REG:2A119037-72C4-1014-84F6-87703AD4166D",
+          "class": "A: book published in the U.S.",
+          "renewal_eid": "REN:RE298640"
+        },
+        "source": "NYPL Catalog of Copyright Entries — registrations (github.com/NYPL/catalog_of_copyright_entries_project)"
+      },
+      {
+        "id": "REN:RE298640",
+        "tool": "search_registrations",
+        "url": null,
+        "source": "NYPL CCE renewals (github.com/NYPL/cce-renewals)",
+        "record_type": "REN",
+        "record": {
+          "renewal_id": "RE298640",
+          "renewal_date": "1986-07-11",
+          "original_regnum": "A349039",
+          "original_regdate": "1958-02-20"
+        },
+        "summary": "Renewal RE298640 filed 1986-07-11 by Nell Marr Dean|A, for registration A349039 of 1958-02-20"
+      },
+      {
+        "id": "RULE:1952-us-False",
+        "tool": "check_us_status",
+        "url": null,
+        "summary": "verdict=undetermined; confidence=low; reasoning=As of 2026-11-18, works published in 1930 or earlier are in the U.S. public domain (95-year maximum term ended). | A search did not identify a renewal; this is not proof of non-renewal. An independent, sufficiently complete investigation of original records and applicable legal formalities is required before declaring public domain. | Always caveats: a later edition's new text, illustrations, translations or forewords can be separately protected; unpublished works follow different rules.",
+        "record_type": "RULE",
+        "record": {
+          "eid": "RULE:1952-us-False",
+          "verdict": "undetermined",
+          "confidence": "low",
+          "reasoning": [
+            "As of 2026-11-18, works published in 1930 or earlier are in the U.S. public domain (95-year maximum term ended).",
+            "A search did not identify a renewal; this is not proof of non-renewal. An independent, sufficiently complete investigation of original records and applicable legal formalities is required before declaring public domain.",
+            "Always caveats: a later edition's new text, illustrations, translations or forewords can be separately protected; unpublished works follow different rules."
+          ],
+          "public_domain_from": null,
+          "source": "U.S. Copyright Office Circular 15A (Duration) and Circular 22 (How to Investigate the Copyright Status of a Work), https://www.copyright.gov/circs/circ22.pdf"
+        },
+        "source": "U.S. Copyright Office Circular 15A (Duration) and Circular 22 (How to Investigate the Copyright Status of a Work), https://www.copyright.gov/circs/circ22.pdf"
+      }
+    ]
+  }
+}

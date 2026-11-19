@@ -1,0 +1,31 @@
+# raw NYPL clones (1.7 GB): only the built Parquet files are committed
+data/nypl_registrations/
+data/nypl_renewals/
+.venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local development
+.Rhistory
+.pytest_cache/
+backups/
+
+# Generated database (keep source Parquet separately)
+data/*.duckdb
+data/*.duckdb.wal
+
+# Credentials
+.env.*
+!.env.example
+*.pem
+*service-account*.json
+
+# Temporary files
+*.log
+
+# Historical scrape pending redistribution review
+
+# Local evaluation and debug artifacts
+.Rhistory
